@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { COLORS } from '@/utils/constants';
 
 export const runtime = 'edge';
 export const size = { width: 180, height: 180 };
@@ -10,7 +11,7 @@ export default function AppleIcon() {
       <div
         style={{
           fontSize: 80,
-          background: 'linear-gradient(135deg, #eb6a22 0%, #d4601f 100%)',
+          background: `linear-gradient(135deg, ${COLORS.CORAL[500]} 0%, ${COLORS.CORAL[600]} 100%)`,
           width: '100%',
           height: '100%',
           display: 'flex',

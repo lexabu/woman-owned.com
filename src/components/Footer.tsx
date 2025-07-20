@@ -35,11 +35,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/directory/lexington" className="text-gray-300 hover:text-white transition-colors">
-                  Lexington Businesses
-                </Link>
-              </li>
-              <li>
                 <Link href="/submit" className="text-gray-300 hover:text-white transition-colors">
                   Submit Your Business
                 </Link>

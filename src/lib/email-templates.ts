@@ -1,3 +1,5 @@
+import { EMAIL_COLORS } from '@/utils/constants';
+
 export interface BusinessSubmissionData {
   businessName: string;
   ownerName: string;
@@ -34,15 +36,15 @@ export function generateBusinessSubmissionEmail(data: BusinessSubmissionData): {
     <head>
       <meta charset="utf-8">
       <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .header { background: #eb6a22; color: white; padding: 20px; text-align: center; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: ${EMAIL_COLORS.DARK_TEXT}; }
+        .header { background: ${EMAIL_COLORS.HEADER}; color: white; padding: 20px; text-align: center; }
         .content { padding: 20px; }
         .section { margin-bottom: 25px; }
-        .section h3 { color: #2d3748; border-bottom: 2px solid #eb6a22; padding-bottom: 5px; }
+        .section h3 { color: ${EMAIL_COLORS.TEXT}; border-bottom: 2px solid ${EMAIL_COLORS.HEADER}; padding-bottom: 5px; }
         .field { margin-bottom: 10px; }
-        .label { font-weight: bold; color: #4a5568; }
+        .label { font-weight: bold; color: ${EMAIL_COLORS.LABEL}; }
         .value { margin-left: 10px; }
-        .footer { background: #f7fafc; padding: 15px; text-align: center; color: #718096; }
+        .footer { background: ${EMAIL_COLORS.BACKGROUND}; padding: 15px; text-align: center; color: ${EMAIL_COLORS.MUTED_TEXT}; }
       </style>
     </head>
     <body>
@@ -182,15 +184,15 @@ export function generateContactEmail(data: ContactFormData): {
     <head>
       <meta charset="utf-8">
       <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .header { background: #eb6a22; color: white; padding: 20px; text-align: center; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: ${EMAIL_COLORS.DARK_TEXT}; }
+        .header { background: ${EMAIL_COLORS.HEADER}; color: white; padding: 20px; text-align: center; }
         .content { padding: 20px; }
         .section { margin-bottom: 25px; }
         .field { margin-bottom: 10px; }
-        .label { font-weight: bold; color: #4a5568; }
+        .label { font-weight: bold; color: ${EMAIL_COLORS.LABEL}; }
         .value { margin-left: 10px; }
-        .message { background: #f7fafc; padding: 15px; border-left: 4px solid #eb6a22; }
-        .footer { background: #f7fafc; padding: 15px; text-align: center; color: #718096; }
+        .message { background: ${EMAIL_COLORS.BACKGROUND}; padding: 15px; border-left: 4px solid ${EMAIL_COLORS.HEADER}; }
+        .footer { background: ${EMAIL_COLORS.BACKGROUND}; padding: 15px; text-align: center; color: ${EMAIL_COLORS.MUTED_TEXT}; }
       </style>
     </head>
     <body>
@@ -262,12 +264,12 @@ export function generateBusinessOwnerConfirmationEmail(data: BusinessSubmissionD
     <head>
       <meta charset="utf-8">
       <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .header { background: #eb6a22; color: white; padding: 20px; text-align: center; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: ${EMAIL_COLORS.DARK_TEXT}; }
+        .header { background: ${EMAIL_COLORS.HEADER}; color: white; padding: 20px; text-align: center; }
         .content { padding: 20px; }
         .section { margin-bottom: 25px; }
-        .cta { background: #eb6a22; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 10px 0; }
-        .footer { background: #f7fafc; padding: 15px; text-align: center; color: #718096; }
+        .cta { background: ${EMAIL_COLORS.HEADER}; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 10px 0; }
+        .footer { background: ${EMAIL_COLORS.BACKGROUND}; padding: 15px; text-align: center; color: ${EMAIL_COLORS.MUTED_TEXT}; }
       </style>
     </head>
     <body>

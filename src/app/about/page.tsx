@@ -90,17 +90,16 @@ export default function AboutPage() {
             </p>
             
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              We started with Lexington, Kentucky, because we believe in starting local and growing strong. 
-              By focusing on one community first, we can create a model that truly works for both 
-              businesses and customers. Every woman-owned business in our directory gets the attention 
+              We believe in building strong communities by connecting people with amazing women-owned 
+              businesses. Our platform works across the nation, creating a model that truly benefits both 
+              businesses and customers. Every women-owned business in our directory gets the attention 
               and support they need to thrive.
             </p>
             
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Our vision is bigger than just Lexington. We&apos;re building a nationwide network that 
-              celebrates women entrepreneurs in every city and town across America. Each new community 
-              we add makes our entire network stronger, creating more opportunities for discovery, 
-              connection, and growth.
+              Our nationwide network celebrates women entrepreneurs in cities and towns across America. 
+              Each community we serve makes our entire network stronger, creating more opportunities for 
+              discovery, connection, and growth.
             </p>
           </div>
         </div>
@@ -120,7 +119,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Authenticity</h3>
               <p className="text-gray-700">
                 We believe in genuine connections and authentic storytelling. Every business 
-                in our directory is real, verified, and truly woman-owned.
+                in our directory is real, verified, and truly women-owned.
               </p>
             </div>
             

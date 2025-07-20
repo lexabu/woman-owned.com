@@ -32,7 +32,7 @@ function generateId() {
 }
 
 async function collectBusinessData() {
-  console.log('\n🏢 Adding a new woman-owned business to the directory\n');
+  console.log('\n🏢 Adding a new women-owned business to the directory\n');
 
   const business = {};
 

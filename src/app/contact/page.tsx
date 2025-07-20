@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, Clock, Send, CheckCircle } from 'lucide-react';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -82,17 +82,6 @@ export default function ContactPage() {
                     <p className="text-gray-600">hello@woman-owned.com</p>
                     <p className="text-sm text-gray-500 mt-1">
                       We respond to most emails within 24 hours
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-coral-500 mt-1 mr-4 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium text-gray-900 mb-1">Location</h3>
-                    <p className="text-gray-600">Lexington, Kentucky</p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Starting local, growing nationwide
                     </p>
                   </div>
                 </div>

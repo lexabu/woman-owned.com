@@ -23,7 +23,7 @@ export default function AccessibleBusinessCard({
       <div className="relative h-48 bg-gray-200">
         <Image
           src={business.image}
-          alt={`Photo of ${business.name}, a woman-owned ${business.category.toLowerCase()} business`}
+          alt={`Photo of ${business.name}, a women-owned ${business.category.toLowerCase()} business`}
           fill
           className="object-cover"
           unoptimized

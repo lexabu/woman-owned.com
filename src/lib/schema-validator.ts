@@ -122,7 +122,7 @@ export function validateSEOReadiness(business: Business): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
 
-  // Meta title length (business name + location + "Woman-Owned Business")
+  // Meta title length (business name + location + "Women-Owned Business")
   const estimatedTitleLength = business.name.length + business.city.length + 25;
   if (estimatedTitleLength > 60) {
     warnings.push('Business name + location may create too long page titles for SEO');

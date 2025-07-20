@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { COLORS } from '@/utils/constants';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -7,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Discover and support amazing women-owned businesses in your community. Connect with female entrepreneurs and find unique local services.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#eb6a22',
+    background_color: COLORS.NEUTRAL.WHITE,
+    theme_color: COLORS.PRIMARY,
     orientation: 'portrait-primary',
     scope: '/',
     lang: 'en-US',
@@ -50,7 +51,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: 'Submit Business',
         short_name: 'Submit',
-        description: 'Submit your woman-owned business',
+        description: 'Submit your women-owned business',
         url: '/submit',
         icons: [{ src: '/icon-192.png', sizes: '192x192' }]
       },

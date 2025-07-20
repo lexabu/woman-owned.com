@@ -1,0 +1,31 @@
+:root {
+  /* Core Brand Colors */
+  --color-primary: #9C5F8D;
+  --color-secondary: #EADFE3;
+  --color-accent: #5E3A56;
+  --color-text-primary: #2B2B2B;
+
+  /* Extended Supporting Colors */
+  --color-light: #FDFBFA;
+  --color-dark: #1C1C1C;
+  --color-gold: #D6B07C;
+  --color-rose: #C48A9E;
+  --color-clay: #C7B8AA;
+
+  /* Button & State Colors */
+  --color-success: #6BA292;
+  --color-warning: #D98C4A;
+  --color-error: #B95B5B;
+  --color-info: #84A9C0;
+
+  /* Grayscale */
+  --gray-100: #FAF9F8;
+  --gray-200: #F0EEED;
+  --gray-300: #DAD5D3;
+  --gray-400: #B8B2AF;
+  --gray-500: #98918C;
+  --gray-600: #6F6965;
+  --gray-700: #4C4744;
+  --gray-800: #332F2C;
+  --gray-900: #1A1816;
+}
