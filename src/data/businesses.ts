@@ -99,15 +99,782 @@ export const businesses: Business[] = [
     },
     featured: true,
     createdAt: '2025-01-01'
+  },
+  {
+    id: '4',
+    name: 'Sunset Boulevard Boutique',
+    slug: 'sunset-boulevard-boutique',
+    description: 'Trendy fashion boutique featuring contemporary styles and unique pieces for the modern woman. Located in the heart of Los Angeles, offering curated fashion from emerging designers.',
+    category: 'Fashion & Jewelry',
+    city: 'Los Angeles',
+    state: 'California',
+    website: 'https://sunsetboulevardla.com',
+    owner: {
+      name: 'Sofia Martinez',
+      bio: 'Fashion entrepreneur with a passion for supporting emerging designers and bringing unique styles to LA.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Women\'s Fashion',
+      'Accessories',
+      'Personal Styling',
+      'Custom Alterations',
+      'Special Occasion Wear'
+    ],
+    socialMedia: {
+      instagram: '@sunsetboulevardla',
+      facebook: 'SunsetBoulevardBoutique'
+    },
+    contact: {
+      phone: '(323) 555-0126',
+      email: 'hello@sunsetboulevardla.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '5',
+    name: 'Ocean Drive Wellness',
+    slug: 'ocean-drive-wellness',
+    description: 'Holistic wellness center offering massage therapy, yoga classes, and wellness coaching. Located in Miami Beach, providing a tranquil escape from city life.',
+    category: 'Beauty & Wellness',
+    city: 'Miami',
+    state: 'Florida',
+    website: 'https://oceandrivewellness.com',
+    owner: {
+      name: 'Isabella Rodriguez',
+      bio: 'Licensed massage therapist and wellness coach dedicated to helping clients achieve balance and well-being.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Massage Therapy',
+      'Yoga Classes',
+      'Wellness Coaching',
+      'Meditation Sessions',
+      'Aromatherapy',
+      'Reiki Healing'
+    ],
+    socialMedia: {
+      instagram: '@oceandrivewellness',
+      facebook: 'OceanDriveWellness'
+    },
+    contact: {
+      phone: '(305) 555-0127',
+      email: 'relax@oceandrivewellness.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '6',
+    name: 'French Quarter Antiques',
+    slug: 'french-quarter-antiques',
+    description: 'Authentic antique shop in the historic French Quarter, specializing in Louisiana heritage pieces and unique collectibles with rich stories.',
+    category: 'Home & Lifestyle',
+    city: 'New Orleans',
+    state: 'Louisiana',
+    website: 'https://frenchquarterantiques.com',
+    owner: {
+      name: 'Marie Boudreaux',
+      bio: 'Antique expert and historian passionate about preserving Louisiana\'s cultural heritage through beautiful artifacts.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Antique Furniture',
+      'Collectibles',
+      'Estate Sales',
+      'Appraisals',
+      'Restoration Services',
+      'Custom Pieces'
+    ],
+    socialMedia: {
+      instagram: '@frenchquarterantiques',
+      facebook: 'FrenchQuarterAntiques'
+    },
+    contact: {
+      phone: '(504) 555-0128',
+      email: 'marie@frenchquarterantiques.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '7',
+    name: 'Cajun Spice Kitchen',
+    slug: 'cajun-spice-kitchen',
+    description: 'Authentic Cajun restaurant serving traditional Louisiana cuisine with family recipes passed down through generations. A true taste of Acadiana.',
+    category: 'Food & Dining',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://cajunspicekitchen.com',
+    owner: {
+      name: 'Evangeline Thibodaux',
+      bio: 'Third-generation Cajun chef keeping family traditions alive through authentic cuisine and warm hospitality.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Cajun Cuisine',
+      'Catering Services',
+      'Private Events',
+      'Cooking Classes',
+      'Take-Out Orders',
+      'Family Meals'
+    ],
+    socialMedia: {
+      instagram: '@cajunspicekitchen',
+      facebook: 'CajunSpiceKitchen'
+    },
+    contact: {
+      phone: '(337) 555-0129',
+      email: 'evangeline@cajunspicekitchen.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  // Lafayette, LA businesses
+  {
+    id: '8',
+    name: 'Something Borrowed Blooms',
+    slug: 'something-borrowed-blooms',
+    description: 'Beautiful floral arrangements for weddings, events, and special occasions. Specializing in elegant, custom designs that make every moment memorable.',
+    category: 'Home & Lifestyle',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://somethingborrowedblooms.com',
+    owner: {
+      name: 'Sarah',
+      bio: 'Professional florist with a passion for creating stunning arrangements that capture the beauty of every special moment.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Wedding Florals',
+      'Event Arrangements',
+      'Custom Bouquets',
+      'Funeral Flowers',
+      'Seasonal Displays',
+      'Floral Design Classes'
+    ],
+    socialMedia: {
+      instagram: '@somethingborrowedblooms',
+      facebook: 'SomethingBorrowedBlooms'
+    },
+    contact: {
+      phone: '(337) 555-0130',
+      email: 'hello@somethingborrowedblooms.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '9',
+    name: 'La Femme Lingerie',
+    slug: 'la-femme-lingerie',
+    description: 'Intimate apparel boutique offering beautiful lingerie, loungewear, and intimate accessories. Celebrating femininity with quality pieces that make every woman feel confident.',
+    category: 'Fashion & Jewelry',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://lafemmelingerie.com',
+    owner: {
+      name: 'Céleste',
+      bio: 'Lingerie expert dedicated to helping women find beautiful, well-fitting intimate apparel that makes them feel amazing.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Lingerie',
+      'Loungewear',
+      'Intimate Accessories',
+      'Bra Fittings',
+      'Bridal Lingerie',
+      'Personal Consultations'
+    ],
+    socialMedia: {
+      instagram: '@lafemmelingerie',
+      facebook: 'LaFemmeLingerie'
+    },
+    contact: {
+      phone: '(337) 555-0131',
+      email: 'info@lafemmelingerie.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '10',
+    name: 'Swoon Boutique Lafayette',
+    slug: 'swoon-boutique-lafayette',
+    description: 'Trendy fashion boutique offering the latest styles in women\'s clothing, accessories, and shoes. Curated collections that help you express your unique style.',
+    category: 'Fashion & Jewelry',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://swoonboutiquelafayette.com',
+    owner: {
+      name: 'Madison',
+      bio: 'Fashion enthusiast bringing the latest trends and timeless pieces to Lafayette women who want to look and feel their best.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Women\'s Fashion',
+      'Accessories',
+      'Shoes',
+      'Personal Styling',
+      'Outfit Coordination',
+      'Special Occasion Wear'
+    ],
+    socialMedia: {
+      instagram: '@swoonboutiquelafayette',
+      facebook: 'SwoonBoutiqueLafayette'
+    },
+    contact: {
+      phone: '(337) 555-0132',
+      email: 'hello@swoonboutiquelafayette.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '11',
+    name: 'Amazing Spaces Organizing + Design',
+    slug: 'amazing-spaces-organizing-design',
+    description: 'Professional organizing and interior design services to transform your home into a functional, beautiful space. Creating organized, stylish environments that work for your lifestyle.',
+    category: 'Home & Lifestyle',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://amazingspacesorganizing.com',
+    owner: {
+      name: 'Jennifer',
+      bio: 'Professional organizer and designer passionate about creating beautiful, functional spaces that enhance daily life.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Home Organizing',
+      'Interior Design',
+      'Space Planning',
+      'Decluttering',
+      'Storage Solutions',
+      'Room Makeovers'
+    ],
+    socialMedia: {
+      instagram: '@amazingspacesorganizing',
+      facebook: 'AmazingSpacesOrganizing'
+    },
+    contact: {
+      phone: '(337) 555-0133',
+      email: 'info@amazingspacesorganizing.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '12',
+    name: 'Maven Womenswear',
+    slug: 'maven-womenswear',
+    description: 'Sophisticated women\'s clothing boutique featuring elevated essentials and statement pieces. Curating wardrobe staples for the modern, confident woman.',
+    category: 'Fashion & Jewelry',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://mavenwomenswear.com',
+    owner: {
+      name: 'Katherine',
+      bio: 'Style maven bringing sophisticated, high-quality women\'s fashion to Lafayette with pieces that transition seamlessly from work to weekend.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Women\'s Clothing',
+      'Wardrobe Essentials',
+      'Statement Pieces',
+      'Personal Shopping',
+      'Style Consulting',
+      'Wardrobe Planning'
+    ],
+    socialMedia: {
+      instagram: '@mavenwomenswear',
+      facebook: 'MavenWomenswear'
+    },
+    contact: {
+      phone: '(337) 555-0134',
+      email: 'hello@mavenwomenswear.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '13',
+    name: 'Brandy Cavitt\'s Shoe Fly',
+    slug: 'brandy-cavitts-shoe-fly',
+    description: 'Unique shoe boutique offering stylish footwear for every occasion. From everyday comfort to special event glamour, find the perfect pair to complete your look.',
+    category: 'Fashion & Jewelry',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://brandycavittsshoefly.com',
+    owner: {
+      name: 'Brandy Cavitt',
+      bio: 'Shoe enthusiast helping women find the perfect footwear to complement their style and lifestyle needs.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Women\'s Shoes',
+      'Sandals',
+      'Boots',
+      'Dress Shoes',
+      'Casual Footwear',
+      'Shoe Accessories'
+    ],
+    socialMedia: {
+      instagram: '@brandycavittsshoefly',
+      facebook: 'BrandyCavittsShoefly'
+    },
+    contact: {
+      phone: '(337) 555-0135',
+      email: 'brandy@brandycavittsshoefly.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '14',
+    name: 'Wonderland Performing Arts',
+    slug: 'wonderland-performing-arts',
+    description: 'Performing arts studio offering dance, theater, and music classes for all ages. Nurturing creativity and confidence through the magic of performance.',
+    category: 'Education & Services',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://wonderlandperformingarts.com',
+    owner: {
+      name: 'Alice',
+      bio: 'Passionate performing arts educator dedicated to helping students discover their talents and build confidence through dance, theater, and music.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Dance Classes',
+      'Theater Programs',
+      'Music Lessons',
+      'Performance Opportunities',
+      'Summer Camps',
+      'Private Instruction'
+    ],
+    socialMedia: {
+      instagram: '@wonderlandperformingarts',
+      facebook: 'WonderlandPerformingArts'
+    },
+    contact: {
+      phone: '(337) 555-0136',
+      email: 'info@wonderlandperformingarts.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '15',
+    name: 'Basin Arts',
+    slug: 'basin-arts',
+    description: 'Contemporary art gallery and studio featuring local and regional artists. Promoting arts education and cultural enrichment in the Acadiana community.',
+    category: 'Home & Lifestyle',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://basinarts.com',
+    owner: {
+      name: 'Gabrielle',
+      bio: 'Art curator and educator passionate about supporting local artists and bringing beautiful art to the community.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Art Gallery',
+      'Art Classes',
+      'Custom Artwork',
+      'Art Sales',
+      'Gallery Events',
+      'Art Consulting'
+    ],
+    socialMedia: {
+      instagram: '@basinarts',
+      facebook: 'BasinArts'
+    },
+    contact: {
+      phone: '(337) 555-0137',
+      email: 'gallery@basinarts.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '16',
+    name: 'Preservation Press',
+    slug: 'preservation-press',
+    description: 'Specialty printing and publishing house focused on preserving Louisiana\'s cultural heritage through books, maps, and historical documents.',
+    category: 'Education & Services',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://preservationpress.com',
+    owner: {
+      name: 'Marie-Claire',
+      bio: 'Publisher and historian dedicated to preserving and sharing Louisiana\'s rich cultural heritage through quality publications.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Book Publishing',
+      'Historical Documents',
+      'Custom Printing',
+      'Map Reproduction',
+      'Heritage Projects',
+      'Archival Services'
+    ],
+    socialMedia: {
+      instagram: '@preservationpress',
+      facebook: 'PreservationPress'
+    },
+    contact: {
+      phone: '(337) 555-0138',
+      email: 'info@preservationpress.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '17',
+    name: 'Krysten Ledet Interiors',
+    slug: 'krysten-ledet-interiors',
+    description: 'Full-service interior design studio creating beautiful, functional spaces that reflect your personal style. Specializing in residential and commercial design.',
+    category: 'Home & Lifestyle',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://krystenledetinteriors.com',
+    owner: {
+      name: 'Krysten Ledet',
+      bio: 'Interior designer with a passion for creating spaces that are both beautiful and functional, reflecting each client\'s unique personality.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Interior Design',
+      'Space Planning',
+      'Furniture Selection',
+      'Color Consultation',
+      'Home Staging',
+      'Design Consultation'
+    ],
+    socialMedia: {
+      instagram: '@krystenledetinteriors',
+      facebook: 'KrystenLedetInteriors'
+    },
+    contact: {
+      phone: '(337) 555-0139',
+      email: 'krysten@krystenledetinteriors.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '18',
+    name: 'Potty Girl',
+    slug: 'potty-girl',
+    description: 'Portable restroom rental service providing clean, reliable facilities for events and construction sites. Professional service with attention to cleanliness and customer satisfaction.',
+    category: 'Education & Services',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://pottygirl.com',
+    owner: {
+      name: 'Lisa',
+      bio: 'Service entrepreneur providing essential portable restroom solutions with a focus on cleanliness, reliability, and customer service.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Portable Restroom Rental',
+      'Event Services',
+      'Construction Site Facilities',
+      'Hand Washing Stations',
+      'Regular Maintenance',
+      'Emergency Service'
+    ],
+    socialMedia: {
+      instagram: '@pottygirl',
+      facebook: 'PottyGirl'
+    },
+    contact: {
+      phone: '(337) 555-0140',
+      email: 'info@pottygirl.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '19',
+    name: 'VaCajun by Sew What Customs',
+    slug: 'vacajun-sew-what-customs',
+    description: 'Custom embroidery and apparel design celebrating Cajun culture. Specializing in personalized clothing, accessories, and promotional items with authentic Louisiana flair.',
+    category: 'Fashion & Jewelry',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://vacajunsewwhat.com',
+    owner: {
+      name: 'Tina',
+      bio: 'Creative entrepreneur celebrating Cajun culture through custom embroidery and apparel design with authentic Louisiana pride.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Custom Embroidery',
+      'Apparel Design',
+      'Promotional Items',
+      'Team Uniforms',
+      'Personalized Gifts',
+      'Cajun-themed Items'
+    ],
+    socialMedia: {
+      instagram: '@vacajunsewwhat',
+      facebook: 'VaCajunSewWhat'
+    },
+    contact: {
+      phone: '(337) 555-0141',
+      email: 'tina@vacajunsewwhat.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '20',
+    name: 'Caroline & Company',
+    slug: 'caroline-company',
+    description: 'Boutique marketing and branding agency helping small businesses tell their story and connect with their audience. Specializing in authentic brand development.',
+    category: 'Education & Services',
+    city: 'Lafayette',
+    state: 'Louisiana',
+    website: 'https://carolineandcompany.com',
+    owner: {
+      name: 'Caroline',
+      bio: 'Marketing strategist passionate about helping small businesses build authentic brands that resonate with their ideal customers.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Brand Development',
+      'Marketing Strategy',
+      'Social Media Management',
+      'Website Design',
+      'Content Creation',
+      'Business Consulting'
+    ],
+    socialMedia: {
+      instagram: '@carolineandcompany',
+      facebook: 'CarolineAndCompany'
+    },
+    contact: {
+      phone: '(337) 555-0142',
+      email: 'caroline@carolineandcompany.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  // Atlanta businesses
+  {
+    id: '21',
+    name: 'Jamie Boudreaux',
+    slug: 'jamie-boudreaux',
+    description: 'Personal styling and wardrobe consulting services helping Atlanta women discover their unique style and build confidence through fashion.',
+    category: 'Fashion & Jewelry',
+    city: 'Atlanta',
+    state: 'Georgia',
+    website: 'https://jamieboudreaux.com',
+    owner: {
+      name: 'Jamie Boudreaux',
+      bio: 'Personal stylist and image consultant helping women feel confident and authentic through personalized styling services.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Personal Styling',
+      'Wardrobe Consulting',
+      'Shopping Services',
+      'Closet Organization',
+      'Image Consulting',
+      'Style Workshops'
+    ],
+    socialMedia: {
+      instagram: '@jamieboudreaux',
+      facebook: 'JamieBoudreaux'
+    },
+    contact: {
+      phone: '(404) 555-0143',
+      email: 'jamie@jamieboudreaux.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '22',
+    name: 'Some from ATL',
+    slug: 'some-from-atl',
+    description: 'Unique Atlanta-based boutique featuring locally-made products, artisan goods, and one-of-a-kind finds that celebrate the spirit of the city.',
+    category: 'Home & Lifestyle',
+    city: 'Atlanta',
+    state: 'Georgia',
+    website: 'https://somefromatlanta.com',
+    owner: {
+      name: 'Samantha',
+      bio: 'Local entrepreneur passionate about showcasing Atlanta\'s creative community through curated products and artisan goods.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Local Products',
+      'Artisan Goods',
+      'Unique Finds',
+      'Atlanta Souvenirs',
+      'Handmade Items',
+      'Custom Orders'
+    ],
+    socialMedia: {
+      instagram: '@somefromatlanta',
+      facebook: 'SomeFromATL'
+    },
+    contact: {
+      phone: '(404) 555-0144',
+      email: 'hello@somefromatlanta.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '23',
+    name: 'SluttyVegan ATL',
+    slug: 'sluttyvegan-atl',
+    description: 'Plant-based restaurant serving delicious vegan comfort food with bold flavors and creative presentations. Making vegan food fun and accessible.',
+    category: 'Food & Dining',
+    city: 'Atlanta',
+    state: 'Georgia',
+    website: 'https://thesluttyvegan.com',
+    owner: {
+      name: 'Pinky Cole',
+      bio: 'Entrepreneur and chef revolutionizing plant-based dining with creative, flavorful vegan comfort food that appeals to everyone.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Vegan Comfort Food',
+      'Plant-Based Burgers',
+      'Vegan Sides',
+      'Smoothies',
+      'Catering',
+      'Food Truck Events'
+    ],
+    socialMedia: {
+      instagram: '@thesluttyvegan',
+      facebook: 'SluttyVeganATL'
+    },
+    contact: {
+      phone: '(404) 555-0145',
+      email: 'info@thesluttyvegan.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '24',
+    name: 'Bomb Biscuit Atlanta',
+    slug: 'bomb-biscuit-atlanta',
+    description: 'Southern comfort food restaurant specializing in gourmet biscuits with creative toppings and fillings. Bringing comfort food to the next level.',
+    category: 'Food & Dining',
+    city: 'Atlanta',
+    state: 'Georgia',
+    website: 'https://bombbiscuitatlanta.com',
+    owner: {
+      name: 'Ashley',
+      bio: 'Chef and entrepreneur bringing Southern comfort food traditions into the modern era with creative, high-quality biscuit creations.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Gourmet Biscuits',
+      'Southern Comfort Food',
+      'Breakfast Items',
+      'Lunch Specials',
+      'Catering Services',
+      'Custom Orders'
+    ],
+    socialMedia: {
+      instagram: '@bombbiscuitatlanta',
+      facebook: 'BombBiscuitAtlanta'
+    },
+    contact: {
+      phone: '(404) 555-0146',
+      email: 'hello@bombbiscuitatlanta.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '25',
+    name: 'Living Walls, the City Speaks',
+    slug: 'living-walls-city-speaks',
+    description: 'Public art organization creating vibrant murals and street art installations that transform Atlanta\'s urban landscape and foster community dialogue.',
+    category: 'Home & Lifestyle',
+    city: 'Atlanta',
+    state: 'Georgia',
+    website: 'https://livingwalls.org',
+    owner: {
+      name: 'Monica',
+      bio: 'Arts advocate and curator dedicated to transforming Atlanta through public art that brings communities together and sparks conversation.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Mural Creation',
+      'Public Art',
+      'Community Projects',
+      'Art Education',
+      'Artist Workshops',
+      'Cultural Events'
+    ],
+    socialMedia: {
+      instagram: '@livingwallsatl',
+      facebook: 'LivingWallsATL'
+    },
+    contact: {
+      phone: '(404) 555-0147',
+      email: 'monica@livingwalls.org'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
+  },
+  {
+    id: '26',
+    name: 'Star Provisions Market',
+    slug: 'star-provisions-market',
+    description: 'Gourmet market and cafe featuring artisanal foods, specialty ingredients, and prepared meals. A culinary destination for food lovers in Atlanta.',
+    category: 'Food & Dining',
+    city: 'Atlanta',
+    state: 'Georgia',
+    website: 'https://starprovisionsmarket.com',
+    owner: {
+      name: 'Anne Quatrano',
+      bio: 'Chef and culinary entrepreneur bringing the finest artisanal foods and ingredients to Atlanta\'s food scene.'
+    },
+    image: '/images/placeholder.svg',
+    services: [
+      'Gourmet Market',
+      'Artisanal Foods',
+      'Specialty Ingredients',
+      'Prepared Meals',
+      'Catering',
+      'Cooking Classes'
+    ],
+    socialMedia: {
+      instagram: '@starprovisionsmarket',
+      facebook: 'StarProvisionsMarket'
+    },
+    contact: {
+      phone: '(404) 555-0148',
+      email: 'info@starprovisionsmarket.com'
+    },
+    featured: true,
+    createdAt: '2025-01-01'
   }
 ];
 
 export const categories = [
-  { name: 'Beauty & Wellness', slug: 'beauty', businessCount: 1 },
-  { name: 'Fashion & Jewelry', slug: 'fashion', businessCount: 1 },
-  { name: 'Home & Lifestyle', slug: 'home', businessCount: 1 }
+  { name: 'Beauty & Wellness', slug: 'beauty', businessCount: 2 },
+  { name: 'Fashion & Jewelry', slug: 'fashion', businessCount: 8 },
+  { name: 'Home & Lifestyle', slug: 'home', businessCount: 6 },
+  { name: 'Food & Dining', slug: 'food', businessCount: 4 },
+  { name: 'Education & Services', slug: 'services', businessCount: 6 }
 ];
 
 export const cities = [
-  { name: 'Lexington', slug: 'lexington', state: 'Kentucky', businessCount: 3 }
+  { name: 'Lexington', slug: 'lexington', state: 'Kentucky', businessCount: 3 },
+  { name: 'Los Angeles', slug: 'los-angeles', state: 'California', businessCount: 1 },
+  { name: 'Miami', slug: 'miami', state: 'Florida', businessCount: 1 },
+  { name: 'New Orleans', slug: 'new-orleans', state: 'Louisiana', businessCount: 1 },
+  { name: 'Lafayette', slug: 'lafayette', state: 'Louisiana', businessCount: 14 },
+  { name: 'Atlanta', slug: 'atlanta', state: 'Georgia', businessCount: 6 }
 ];
