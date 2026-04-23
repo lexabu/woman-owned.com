@@ -2,7 +2,7 @@ import { Business } from "@/types/business";
 
 export const businesses: Business[] = [
   {
-    id: "1",x
+    id: "1",
     name: "Lana Salon Suites",
     slug: "lana-salon-suites",
     description:
