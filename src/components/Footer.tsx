@@ -39,6 +39,11 @@ export default function Footer() {
                   Submit Your Business
                 </Link>
               </li>
+              <li>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Resources
+                </Link>
+              </li>
             </ul>
           </div>
           

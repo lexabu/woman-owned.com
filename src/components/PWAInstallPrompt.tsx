@@ -21,6 +21,7 @@ export default function PWAInstallPrompt() {
   useEffect(() => {
     // Check if app is already installed
     if (window.matchMedia('(display-mode: standalone)').matches) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time PWA capability detection requires window, which is unavailable during SSR
       setIsInstalled(true);
       return;
     }

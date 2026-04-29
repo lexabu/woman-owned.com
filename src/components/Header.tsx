@@ -27,14 +27,20 @@ export default function Header() {
             >
               Directory
             </Link>
-            <Link 
-              href="/submit" 
+            <Link
+              href="/submit"
               className="text-gray-700 hover:text-navy-600 focus:text-navy-600 focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 rounded-md px-2 py-1 transition-colors"
             >
               Submit Business
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/resources"
+              className="text-gray-700 hover:text-navy-600 focus:text-navy-600 focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 rounded-md px-2 py-1 transition-colors"
+            >
+              Resources
+            </Link>
+            <Link
+              href="/about"
               className="text-gray-700 hover:text-navy-600 focus:text-navy-600 focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 rounded-md px-2 py-1 transition-colors"
             >
               About
@@ -87,15 +93,22 @@ export default function Header() {
               >
                 Directory
               </Link>
-              <Link 
-                href="/submit" 
+              <Link
+                href="/submit"
                 className="block px-3 py-2 text-gray-700 hover:text-navy-600 hover:bg-gray-50 focus:text-navy-600 focus:bg-gray-50 focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 rounded-md transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Submit Business
               </Link>
-              <Link 
-                href="/about" 
+              <Link
+                href="/resources"
+                className="block px-3 py-2 text-gray-700 hover:text-navy-600 hover:bg-gray-50 focus:text-navy-600 focus:bg-gray-50 focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 rounded-md transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Resources
+              </Link>
+              <Link
+                href="/about"
                 className="block px-3 py-2 text-gray-700 hover:text-navy-600 hover:bg-gray-50 focus:text-navy-600 focus:bg-gray-50 focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 rounded-md transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
