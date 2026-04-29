@@ -12,9 +12,9 @@ const guides = [
     href: '/resources/wbe-certification-guide',
     title: 'WBE Certification: A Complete Guide',
     description:
-      'What WBE certification is, who certifies it, what it costs, and the real-world benefits — set-aside contracts, supplier diversity programs, and marketing trust.',
+      'What WBE certification is, who certifies it, what it costs, and how to use SIC and NAICS codes for both certification and free industry benchmarking. Includes a step-by-step on updating your D&B profile.',
     icon: Award,
-    readTime: '12 min read',
+    readTime: '15 min read',
   },
 ];
 

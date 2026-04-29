@@ -14,8 +14,10 @@ const sections = [
   { id: 'what-is-wbe', label: 'What is WBE certification?' },
   { id: 'who-certifies', label: 'Who issues certification' },
   { id: 'sic-naics', label: 'SIC & NAICS codes' },
+  { id: 'beyond-cert', label: 'Beyond certification: benchmarks & strategy' },
   { id: 'benefits', label: 'Real-world benefits' },
   { id: 'how-to-start', label: 'How to get certified' },
+  { id: 'dnb-profile', label: 'Update your Dun & Bradstreet profile' },
   { id: 'pitfalls', label: 'Common pitfalls' },
   { id: 'mena-gap', label: 'A note on MENA / Arab American owners' },
   { id: 'next-steps', label: 'Next steps' },
@@ -44,7 +46,7 @@ export default function WbeCertificationGuidePage() {
             What it is, who issues it, what it costs, and the real-world benefits — plus how
             classification codes like SIC and NAICS fit in.
           </p>
-          <p className="text-sm text-navy-300 mt-6">12 min read · Updated April 2026</p>
+          <p className="text-sm text-navy-300 mt-6">15 min read · Updated April 2026</p>
         </div>
       </div>
 
@@ -286,8 +288,120 @@ export default function WbeCertificationGuidePage() {
             </p>
 
             {/* Section 4 */}
+            <h2 id="beyond-cert" className="scroll-mt-24 text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+              4. Beyond certification: how these codes actually help your business
+            </h2>
+            <p className="text-gray-700">
+              Certification is the obvious use, but your SIC and NAICS codes unlock a second
+              category of value most owners never tap into: <strong>industry intelligence</strong>.
+              These codes are how the U.S. government (and a lot of private data providers)
+              aggregate stats about businesses in your category — revenue ranges, employment
+              levels, growth trends, geographic concentration, average wages.
+            </p>
+            <p className="text-gray-700">
+              That data is free, public, and underused. Here&apos;s where to look:
+            </p>
+
+            <div className="not-prose overflow-x-auto my-6">
+              <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-b border-gray-200">
+                      Source
+                    </th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-b border-gray-200">
+                      What it tells you
+                    </th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-b border-gray-200">
+                      Cost
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm text-gray-700">
+                  <tr className="border-b border-gray-100">
+                    <td className="px-4 py-3 font-semibold align-top">
+                      U.S. Census County Business Patterns
+                    </td>
+                    <td className="px-4 py-3 align-top">
+                      How many businesses, employees, and total payroll exist in your NAICS
+                      code, broken down by county and state
+                    </td>
+                    <td className="px-4 py-3 align-top">Free</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-4 py-3 font-semibold align-top">Bureau of Labor Statistics</td>
+                    <td className="px-4 py-3 align-top">
+                      Average wages, employment trends, and projected industry growth by
+                      occupation and NAICS
+                    </td>
+                    <td className="px-4 py-3 align-top">Free</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-4 py-3 font-semibold align-top">SBA Size Standards</td>
+                    <td className="px-4 py-3 align-top">
+                      The revenue or employee count that determines whether you qualify as a
+                      &quot;small business&quot; under your NAICS code — different for every
+                      industry
+                    </td>
+                    <td className="px-4 py-3 align-top">Free</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-4 py-3 font-semibold align-top">Census Economic Census</td>
+                    <td className="px-4 py-3 align-top">
+                      Detailed sector revenue, expenses, and operations — published every 5
+                      years, deeper than annual data
+                    </td>
+                    <td className="px-4 py-3 align-top">Free</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-4 py-3 font-semibold align-top">IBISWorld / Statista</td>
+                    <td className="px-4 py-3 align-top">
+                      Curated industry reports, competitor analysis, market sizing
+                    </td>
+                    <td className="px-4 py-3 align-top">Paid (often via library access)</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-semibold align-top">Dun &amp; Bradstreet Hoovers</td>
+                    <td className="px-4 py-3 align-top">
+                      Company-level data on competitors and prospects in your NAICS
+                    </td>
+                    <td className="px-4 py-3 align-top">Paid</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">
+              What you can do with that data
+            </h3>
+            <ul className="text-gray-700 space-y-2">
+              <li>
+                <strong>Benchmark your business.</strong> Compare your revenue per employee
+                against the BLS average for your NAICS to spot productivity gaps or strengths.
+              </li>
+              <li>
+                <strong>Find underserved markets.</strong> County Business Patterns shows where
+                your industry is concentrated — and where it isn&apos;t. Gaps are opportunities.
+              </li>
+              <li>
+                <strong>Set realistic growth targets.</strong> If BLS projects your sector
+                growing 8% annually, planning for 30% growth is a red flag for investors.
+              </li>
+              <li>
+                <strong>Confirm small-business eligibility.</strong> SBA size standards vary
+                wildly by NAICS — a software firm can have $30M revenue and still qualify, while
+                a manufacturer might max out at 500 employees regardless of revenue.
+              </li>
+              <li>
+                <strong>Pitch with credibility.</strong> Citing real BLS or Census numbers in a
+                proposal or grant application separates you from competitors making vague
+                claims.
+              </li>
+            </ul>
+
+            {/* Section 5 (was 4) */}
             <h2 id="benefits" className="scroll-mt-24 text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
-              4. The real-world benefits
+              5. The real-world benefits of certification
             </h2>
             <p className="text-gray-700">
               Certification is paperwork. It&apos;s only worth doing if it produces results.
@@ -336,9 +450,9 @@ export default function WbeCertificationGuidePage() {
               </div>
             </div>
 
-            {/* Section 5 */}
+            {/* Section 6 */}
             <h2 id="how-to-start" className="scroll-mt-24 text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
-              5. How to get certified
+              6. How to get certified
             </h2>
             <p className="text-gray-700">
               The process varies by certifier but the document checklist is broadly the same.
@@ -394,9 +508,69 @@ export default function WbeCertificationGuidePage() {
               free or under $500.
             </p>
 
-            {/* Section 6 */}
+            {/* Section 7 */}
+            <h2 id="dnb-profile" className="scroll-mt-24 text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+              7. Update your Dun &amp; Bradstreet profile
+            </h2>
+            <p className="text-gray-700">
+              Once you&apos;re certified — or even before, if you qualify on the small-business
+              axis — go update your D&amp;B profile. It&apos;s a step most owners skip, and it
+              quietly shows up in supplier-diversity searches that corporate procurement teams
+              actually use.
+            </p>
+            <p className="text-gray-700">
+              Log in to the D&amp;B DUNS Manager and look for the section to highlight your
+              ownership status:
+            </p>
+
+            <div className="not-prose bg-navy-50 border border-navy-200 rounded-lg p-6 my-6">
+              <p className="text-sm text-gray-600 uppercase tracking-wide font-semibold mb-2">
+                Direct link
+              </p>
+              <a
+                href="https://smallbusiness.dnb.com/duns-manager/company-profile"
+                className="text-coral-600 hover:underline font-medium inline-flex items-center break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                smallbusiness.dnb.com/duns-manager/company-profile
+                <ExternalLink className="ml-2 h-4 w-4 flex-shrink-0" aria-hidden="true" />
+              </a>
+              <p className="text-gray-700 mt-3 text-sm">
+                Inside the profile editor, click <strong>Highlight Your Small and Diverse
+                Ownership Status</strong>. You&apos;ll be able to flag woman-owned, minority-owned,
+                veteran-owned, disability-owned, LGBTQ-owned, and small business designations
+                that apply.
+              </p>
+            </div>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">
+              Don&apos;t skip the small business flag
+            </h3>
+            <p className="text-gray-700">
+              &quot;Small business&quot; is its own classification — separate from women-owned
+              or minority-owned. Most service-based businesses qualify under SBA size standards
+              for their NAICS code (a software firm can have up to $30M revenue, a beauty salon
+              up to $8.5M). It&apos;s the easiest box to check, and it puts you in supplier
+              diversity searches that filter for small business specifically — a much larger
+              pool than diverse-owned alone.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">
+              What gets verified
+            </h3>
+            <p className="text-gray-700">
+              D&amp;B reviews self-reported ownership flags. Most updates process in 7 days,
+              though trade payment history can take 14 days and financial statement updates can
+              take 21. You&apos;ll typically be asked to upload supporting documentation
+              (certification letters from WBENC / SBA / state programs) for diverse-owned flags
+              — having your certification in hand makes this a 5-minute task instead of a
+              months-long back-and-forth.
+            </p>
+
+            {/* Section 8 (was 6) */}
             <h2 id="pitfalls" className="scroll-mt-24 text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
-              6. Common pitfalls
+              8. Common pitfalls
             </h2>
             <div className="not-prose space-y-4 my-6">
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg">
@@ -445,9 +619,9 @@ export default function WbeCertificationGuidePage() {
               </div>
             </div>
 
-            {/* Section 7 */}
+            {/* Section 9 */}
             <h2 id="mena-gap" className="scroll-mt-24 text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
-              7. A note on MENA / Arab American owners
+              9. A note on MENA / Arab American owners
             </h2>
             <p className="text-gray-700">
               If you&apos;re an Arab American or MENA (Middle Eastern or North African) woman
@@ -470,9 +644,9 @@ export default function WbeCertificationGuidePage() {
               programs. It&apos;s worth checking program-by-program rather than assuming.
             </p>
 
-            {/* Section 8 */}
+            {/* Section 10 */}
             <h2 id="next-steps" className="scroll-mt-24 text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
-              8. Next steps you can take this week
+              10. Next steps you can take this week
             </h2>
             <ol className="text-gray-700 space-y-3 list-decimal list-inside marker:font-semibold marker:text-coral-500">
               <li>
@@ -501,6 +675,33 @@ export default function WbeCertificationGuidePage() {
                 <strong>Apply.</strong> SBA WOSB self-certification at certify.sba.gov is free
                 and same-day. Start there if you want federal contracting access; do it in
                 parallel with WBENC for corporate.
+              </li>
+              <li>
+                <strong>Update your D&amp;B profile.</strong> Log into{' '}
+                <a
+                  href="https://smallbusiness.dnb.com/duns-manager/company-profile"
+                  className="text-coral-600 hover:underline inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  smallbusiness.dnb.com/duns-manager
+                  <ExternalLink className="ml-1 h-3.5 w-3.5" aria-hidden="true" />
+                </a>{' '}
+                and click &quot;Highlight Your Small and Diverse Ownership Status.&quot; Flag
+                small business plus any diverse-owned status you qualify for.
+              </li>
+              <li>
+                <strong>Pull industry benchmarks.</strong> Look up your NAICS at{' '}
+                <a
+                  href="https://www.census.gov/programs-surveys/cbp.html"
+                  className="text-coral-600 hover:underline inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Census County Business Patterns
+                  <ExternalLink className="ml-1 h-3.5 w-3.5" aria-hidden="true" />
+                </a>{' '}
+                to see how your business compares to peers in your area.
               </li>
               <li>
                 <strong>List in directories.</strong> Once certified, list your business
