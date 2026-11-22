@@ -12,10 +12,6 @@ export const businesses: Business[] = [
     state: "Kentucky",
     website: "https://www.lanasalonsuite.com/",
     appointmentsUrl: "https://www.lanasalonsuite.com/salon-owners",
-    owner: {
-      name: "Lana Habash",
-      bio: "Professional stylist with years of experience in creating beautiful, personalized looks for her clients.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Private Salon Suite Rentals",
@@ -26,6 +22,7 @@ export const businesses: Business[] = [
       facebook: "LanaSalonSuites",
     },
     contact: {
+      address: "2548 Larkin Rd",
       label: "Suite leasing",
       phone: "+1-270-331-9567",
       email: "info@lanasalonsuite.com",
@@ -44,8 +41,7 @@ export const businesses: Business[] = [
     state: "Kentucky",
     website: "https://almazafinejewelry.com",
     owner: {
-      name: "Maysoon Dabbain",
-      bio: "Master jeweler and designer creating one-of-a-kind pieces that celebrate life's special moments.",
+      name: "Maysoon",
     },
     image: "/images/placeholder.svg",
     services: [
@@ -57,10 +53,11 @@ export const businesses: Business[] = [
       "Appraisals",
     ],
     socialMedia: {
-      instagram: "@almazafinejewelry",
+      instagram: "@almazafinejewelry1",
       facebook: "AlmazaFineJewelry",
     },
     contact: {
+      address: "3061 Fieldstone Way, Suite 500",
       phone: "+1-859-785-1970",
       email: "almazafinejewelry@gmail.com",
     },
@@ -79,7 +76,7 @@ export const businesses: Business[] = [
     website: "https://shopmaraishome.com",
     owner: {
       name: "Katie DesMarais",
-      bio: "Interior design enthusiast and curator with an eye for beautiful, unique pieces that make a house feel like home. Katie is a mother of two and a wife to her best friend, Chris.",
+      founderVerified: true,
     },
     image: "/images/placeholder.svg",
     services: [
@@ -91,8 +88,7 @@ export const businesses: Business[] = [
       "Custom Orders",
     ],
     socialMedia: {
-      instagram: "maraishome/",
-      facebook: "ShopMaraisHome",
+      instagram: "@maraishome",
     },
     contact: {
       phone: "+1-859-800-2481",
@@ -110,11 +106,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Los Angeles",
     state: "California",
-    website: "https://sunsetboulevardla.com",
-    owner: {
-      name: "Sofia Martinez",
-      bio: "Fashion entrepreneur with a passion for supporting emerging designers and bringing unique styles to LA.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Women's Fashion",
@@ -123,14 +114,6 @@ export const businesses: Business[] = [
       "Custom Alterations",
       "Special Occasion Wear",
     ],
-    socialMedia: {
-      instagram: "@sunsetboulevardla",
-      facebook: "SunsetBoulevardBoutique",
-    },
-    contact: {
-      phone: "(323) 555-0126",
-      email: "hello@sunsetboulevardla.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -143,11 +126,6 @@ export const businesses: Business[] = [
     category: "Beauty & Wellness",
     city: "Miami",
     state: "Florida",
-    website: "https://oceandrivewellness.com",
-    owner: {
-      name: "Isabella Rodriguez",
-      bio: "Licensed massage therapist and wellness coach dedicated to helping clients achieve balance and well-being.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Massage Therapy",
@@ -157,14 +135,6 @@ export const businesses: Business[] = [
       "Aromatherapy",
       "Reiki Healing",
     ],
-    socialMedia: {
-      instagram: "@oceandrivewellness",
-      facebook: "OceanDriveWellness",
-    },
-    contact: {
-      phone: "(305) 555-0127",
-      email: "relax@oceandrivewellness.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -177,11 +147,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "New Orleans",
     state: "Louisiana",
-    website: "https://frenchquarterantiques.com",
-    owner: {
-      name: "Marie Boudreaux",
-      bio: "Antique expert and historian passionate about preserving Louisiana's cultural heritage through beautiful artifacts.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Antique Furniture",
@@ -191,14 +156,6 @@ export const businesses: Business[] = [
       "Restoration Services",
       "Custom Pieces",
     ],
-    socialMedia: {
-      instagram: "@frenchquarterantiques",
-      facebook: "FrenchQuarterAntiques",
-    },
-    contact: {
-      phone: "(504) 555-0128",
-      email: "marie@frenchquarterantiques.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -211,11 +168,6 @@ export const businesses: Business[] = [
     category: "Food & Dining",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://cajunspicekitchen.com",
-    owner: {
-      name: "Evangeline Thibodaux",
-      bio: "Third-generation Cajun chef keeping family traditions alive through authentic cuisine and warm hospitality.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Cajun Cuisine",
@@ -225,14 +177,6 @@ export const businesses: Business[] = [
       "Take-Out Orders",
       "Family Meals",
     ],
-    socialMedia: {
-      instagram: "@cajunspicekitchen",
-      facebook: "CajunSpiceKitchen",
-    },
-    contact: {
-      phone: "(337) 555-0129",
-      email: "evangeline@cajunspicekitchen.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -247,10 +191,6 @@ export const businesses: Business[] = [
     city: "Lafayette",
     state: "Louisiana",
     website: "https://somethingborrowedblooms.com",
-    owner: {
-      name: "Sarah",
-      bio: "Professional florist with a passion for creating stunning arrangements that capture the beauty of every special moment.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Wedding Florals",
@@ -261,12 +201,11 @@ export const businesses: Business[] = [
       "Floral Design Classes",
     ],
     socialMedia: {
-      instagram: "@somethingborrowedblooms",
+      instagram: "@sbblooms",
       facebook: "SomethingBorrowedBlooms",
     },
     contact: {
-      phone: "(337) 555-0130",
-      email: "hello@somethingborrowedblooms.com",
+      email: "info@sbblooms.com",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -280,11 +219,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://lafemmelingerie.com",
-    owner: {
-      name: "Céleste",
-      bio: "Lingerie expert dedicated to helping women find beautiful, well-fitting intimate apparel that makes them feel amazing.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Lingerie",
@@ -294,14 +228,6 @@ export const businesses: Business[] = [
       "Bridal Lingerie",
       "Personal Consultations",
     ],
-    socialMedia: {
-      instagram: "@lafemmelingerie",
-      facebook: "LaFemmeLingerie",
-    },
-    contact: {
-      phone: "(337) 555-0131",
-      email: "info@lafemmelingerie.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -314,11 +240,7 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://swoonboutiquelafayette.com",
-    owner: {
-      name: "Madison",
-      bio: "Fashion enthusiast bringing the latest trends and timeless pieces to Lafayette women who want to look and feel their best.",
-    },
+    website: "https://www.flutterlafayette.com/",
     image: "/images/placeholder.svg",
     services: [
       "Women's Fashion",
@@ -328,13 +250,8 @@ export const businesses: Business[] = [
       "Outfit Coordination",
       "Special Occasion Wear",
     ],
-    socialMedia: {
-      instagram: "@swoonboutiquelafayette",
-      facebook: "SwoonBoutiqueLafayette",
-    },
     contact: {
-      phone: "(337) 555-0132",
-      email: "hello@swoonboutiquelafayette.com",
+      email: "support@flutterlafayette.com",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -348,11 +265,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://amazingspacesorganizing.com",
-    owner: {
-      name: "Jennifer",
-      bio: "Professional organizer and designer passionate about creating beautiful, functional spaces that enhance daily life.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Home Organizing",
@@ -362,14 +274,6 @@ export const businesses: Business[] = [
       "Storage Solutions",
       "Room Makeovers",
     ],
-    socialMedia: {
-      instagram: "@amazingspacesorganizing",
-      facebook: "AmazingSpacesOrganizing",
-    },
-    contact: {
-      phone: "(337) 555-0133",
-      email: "info@amazingspacesorganizing.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -383,10 +287,6 @@ export const businesses: Business[] = [
     city: "Lafayette",
     state: "Louisiana",
     website: "https://mavenwomenswear.com",
-    owner: {
-      name: "Katherine",
-      bio: "Style maven bringing sophisticated, high-quality women's fashion to Lafayette with pieces that transition seamlessly from work to weekend.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Women's Clothing",
@@ -400,10 +300,6 @@ export const businesses: Business[] = [
       instagram: "@mavenwomenswear",
       facebook: "MavenWomenswear",
     },
-    contact: {
-      phone: "(337) 555-0134",
-      email: "hello@mavenwomenswear.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -416,11 +312,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://brandycavittsshoefly.com",
-    owner: {
-      name: "Brandy Cavitt",
-      bio: "Shoe enthusiast helping women find the perfect footwear to complement their style and lifestyle needs.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Women's Shoes",
@@ -430,14 +321,6 @@ export const businesses: Business[] = [
       "Casual Footwear",
       "Shoe Accessories",
     ],
-    socialMedia: {
-      instagram: "@brandycavittsshoefly",
-      facebook: "BrandyCavittsShoefly",
-    },
-    contact: {
-      phone: "(337) 555-0135",
-      email: "brandy@brandycavittsshoefly.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -451,10 +334,6 @@ export const businesses: Business[] = [
     city: "Lafayette",
     state: "Louisiana",
     website: "https://wonderlandperformingarts.com",
-    owner: {
-      name: "Alice",
-      bio: "Passionate performing arts educator dedicated to helping students discover their talents and build confidence through dance, theater, and music.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Dance Classes",
@@ -469,7 +348,6 @@ export const businesses: Business[] = [
       facebook: "WonderlandPerformingArts",
     },
     contact: {
-      phone: "(337) 555-0136",
       email: "info@wonderlandperformingarts.com",
     },
     featured: true,
@@ -484,11 +362,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://basinarts.com",
-    owner: {
-      name: "Gabrielle",
-      bio: "Art curator and educator passionate about supporting local artists and bringing beautiful art to the community.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Art Gallery",
@@ -498,14 +371,6 @@ export const businesses: Business[] = [
       "Gallery Events",
       "Art Consulting",
     ],
-    socialMedia: {
-      instagram: "@basinarts",
-      facebook: "BasinArts",
-    },
-    contact: {
-      phone: "(337) 555-0137",
-      email: "gallery@basinarts.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -518,11 +383,6 @@ export const businesses: Business[] = [
     category: "Education & Services",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://preservationpress.com",
-    owner: {
-      name: "Marie-Claire",
-      bio: "Publisher and historian dedicated to preserving and sharing Louisiana's rich cultural heritage through quality publications.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Book Publishing",
@@ -532,14 +392,6 @@ export const businesses: Business[] = [
       "Heritage Projects",
       "Archival Services",
     ],
-    socialMedia: {
-      instagram: "@preservationpress",
-      facebook: "PreservationPress",
-    },
-    contact: {
-      phone: "(337) 555-0138",
-      email: "info@preservationpress.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -555,7 +407,6 @@ export const businesses: Business[] = [
     website: "https://krystenledetinteriors.com",
     owner: {
       name: "Krysten Ledet",
-      bio: "Interior designer with a passion for creating spaces that are both beautiful and functional, reflecting each client's unique personality.",
     },
     image: "/images/placeholder.svg",
     services: [
@@ -567,12 +418,11 @@ export const businesses: Business[] = [
       "Design Consultation",
     ],
     socialMedia: {
-      instagram: "@krystenledetinteriors",
-      facebook: "KrystenLedetInteriors",
+      instagram: "@krysten.ledet.interiors",
+      facebook: "krysten.ledet.interiors",
     },
     contact: {
-      phone: "(337) 555-0139",
-      email: "krysten@krystenledetinteriors.com",
+      address: "102 Camille St",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -586,11 +436,6 @@ export const businesses: Business[] = [
     category: "Education & Services",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://pottygirl.com",
-    owner: {
-      name: "Lisa",
-      bio: "Service entrepreneur providing essential portable restroom solutions with a focus on cleanliness, reliability, and customer service.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Portable Restroom Rental",
@@ -600,14 +445,6 @@ export const businesses: Business[] = [
       "Regular Maintenance",
       "Emergency Service",
     ],
-    socialMedia: {
-      instagram: "@pottygirl",
-      facebook: "PottyGirl",
-    },
-    contact: {
-      phone: "(337) 555-0140",
-      email: "info@pottygirl.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -620,11 +457,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://vacajunsewwhat.com",
-    owner: {
-      name: "Tina",
-      bio: "Creative entrepreneur celebrating Cajun culture through custom embroidery and apparel design with authentic Louisiana pride.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Custom Embroidery",
@@ -634,14 +466,6 @@ export const businesses: Business[] = [
       "Personalized Gifts",
       "Cajun-themed Items",
     ],
-    socialMedia: {
-      instagram: "@vacajunsewwhat",
-      facebook: "VaCajunSewWhat",
-    },
-    contact: {
-      phone: "(337) 555-0141",
-      email: "tina@vacajunsewwhat.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -650,31 +474,27 @@ export const businesses: Business[] = [
     name: "Caroline & Company",
     slug: "caroline-company",
     description:
-      "Boutique marketing and branding agency helping small businesses tell their story and connect with their audience. Specializing in authentic brand development.",
-    category: "Education & Services",
+      "Gift and home boutique offering gifts, home décor, accessories, children's clothing and baby gifts, with personalization and monogramming, in Lafayette, Louisiana.",
+    category: "Home & Lifestyle",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://carolineandcompany.com",
-    owner: {
-      name: "Caroline",
-      bio: "Marketing strategist passionate about helping small businesses build authentic brands that resonate with their ideal customers.",
-    },
+    website: "https://www.carolineandco.com/",
     image: "/images/placeholder.svg",
     services: [
-      "Brand Development",
-      "Marketing Strategy",
-      "Social Media Management",
-      "Website Design",
-      "Content Creation",
-      "Business Consulting",
+      "Gifts",
+      "Home Décor",
+      "Accessories",
+      "Children's Clothing",
+      "Baby Gifts",
+      "Personalization & Monogramming",
     ],
     socialMedia: {
-      instagram: "@carolineandcompany",
+      instagram: "@carolineandco",
       facebook: "CarolineAndCompany",
     },
     contact: {
-      phone: "(337) 555-0142",
-      email: "caroline@carolineandcompany.com",
+      address: "1800 Kaliste Saloom Rd",
+      phone: "+1-337-984-3263",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -689,11 +509,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://jamieboudreaux.com",
-    owner: {
-      name: "Jamie Boudreaux",
-      bio: "Personal stylist and image consultant helping women feel confident and authentic through personalized styling services.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Personal Styling",
@@ -703,14 +518,6 @@ export const businesses: Business[] = [
       "Image Consulting",
       "Style Workshops",
     ],
-    socialMedia: {
-      instagram: "@jamieboudreaux",
-      facebook: "JamieBoudreaux",
-    },
-    contact: {
-      phone: "(404) 555-0143",
-      email: "jamie@jamieboudreaux.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -723,11 +530,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://somefromatlanta.com",
-    owner: {
-      name: "Samantha",
-      bio: "Local entrepreneur passionate about showcasing Atlanta's creative community through curated products and artisan goods.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Local Products",
@@ -737,14 +539,6 @@ export const businesses: Business[] = [
       "Handmade Items",
       "Custom Orders",
     ],
-    socialMedia: {
-      instagram: "@somefromatlanta",
-      facebook: "SomeFromATL",
-    },
-    contact: {
-      phone: "(404) 555-0144",
-      email: "hello@somefromatlanta.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -757,11 +551,6 @@ export const businesses: Business[] = [
     category: "Food & Dining",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://thesluttyvegan.com",
-    owner: {
-      name: "Pinky Cole",
-      bio: "Entrepreneur and chef revolutionizing plant-based dining with creative, flavorful vegan comfort food that appeals to everyone.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Vegan Comfort Food",
@@ -771,14 +560,6 @@ export const businesses: Business[] = [
       "Catering",
       "Food Truck Events",
     ],
-    socialMedia: {
-      instagram: "@thesluttyvegan",
-      facebook: "SluttyVeganATL",
-    },
-    contact: {
-      phone: "(404) 555-0145",
-      email: "info@thesluttyvegan.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -791,10 +572,9 @@ export const businesses: Business[] = [
     category: "Food & Dining",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://bombbiscuitatlanta.com",
+    website: "https://bombbiscuitatl.com",
     owner: {
-      name: "Ashley",
-      bio: "Chef and entrepreneur bringing Southern comfort food traditions into the modern era with creative, high-quality biscuit creations.",
+      name: "Erika Council",
     },
     image: "/images/placeholder.svg",
     services: [
@@ -806,46 +586,13 @@ export const businesses: Business[] = [
       "Custom Orders",
     ],
     socialMedia: {
-      instagram: "@bombbiscuitatlanta",
+      instagram: "@bombbiscuitatl",
       facebook: "BombBiscuitAtlanta",
     },
     contact: {
-      phone: "(404) 555-0146",
-      email: "hello@bombbiscuitatlanta.com",
-    },
-    featured: true,
-    createdAt: "2025-01-01",
-  },
-  {
-    id: "25",
-    name: "Living Walls, the City Speaks",
-    slug: "living-walls-city-speaks",
-    description:
-      "Public art organization creating vibrant murals and street art installations that transform Atlanta's urban landscape and foster community dialogue.",
-    category: "Home & Lifestyle",
-    city: "Atlanta",
-    state: "Georgia",
-    website: "https://livingwalls.org",
-    owner: {
-      name: "Monica",
-      bio: "Arts advocate and curator dedicated to transforming Atlanta through public art that brings communities together and sparks conversation.",
-    },
-    image: "/images/placeholder.svg",
-    services: [
-      "Mural Creation",
-      "Public Art",
-      "Community Projects",
-      "Art Education",
-      "Artist Workshops",
-      "Cultural Events",
-    ],
-    socialMedia: {
-      instagram: "@livingwallsatl",
-      facebook: "LivingWallsATL",
-    },
-    contact: {
-      phone: "(404) 555-0147",
-      email: "monica@livingwalls.org",
+      address: "519 Memorial Dr SE, Suite B-02",
+      phone: "+1-678-949-9439",
+      email: "info@bombbiscuitatl.com",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -859,11 +606,6 @@ export const businesses: Business[] = [
     category: "Food & Dining",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://starprovisionsmarket.com",
-    owner: {
-      name: "Anne Quatrano",
-      bio: "Chef and culinary entrepreneur bringing the finest artisanal foods and ingredients to Atlanta's food scene.",
-    },
     image: "/images/placeholder.svg",
     services: [
       "Gourmet Market",
@@ -873,14 +615,6 @@ export const businesses: Business[] = [
       "Catering",
       "Cooking Classes",
     ],
-    socialMedia: {
-      instagram: "@starprovisionsmarket",
-      facebook: "StarProvisionsMarket",
-    },
-    contact: {
-      phone: "(404) 555-0148",
-      email: "info@starprovisionsmarket.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -889,9 +623,9 @@ export const businesses: Business[] = [
 export const categories = [
   { name: "Beauty & Wellness", slug: "beauty", businessCount: 2 },
   { name: "Fashion & Jewelry", slug: "fashion", businessCount: 8 },
-  { name: "Home & Lifestyle", slug: "home", businessCount: 6 },
+  { name: "Home & Lifestyle", slug: "home", businessCount: 8 },
   { name: "Food & Dining", slug: "food", businessCount: 4 },
-  { name: "Education & Services", slug: "services", businessCount: 6 },
+  { name: "Education & Services", slug: "services", businessCount: 3 },
 ];
 
 export const cities = [
@@ -915,5 +649,5 @@ export const cities = [
     state: "Louisiana",
     businessCount: 14,
   },
-  { name: "Atlanta", slug: "atlanta", state: "Georgia", businessCount: 6 },
+  { name: "Atlanta", slug: "atlanta", state: "Georgia", businessCount: 5 },
 ];

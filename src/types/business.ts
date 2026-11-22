@@ -6,11 +6,15 @@ export interface Business {
   category: string;
   city: string;
   state: string;
-  website: string;
+  /** Only set when the business's own site is live and verified. */
+  website?: string;
   appointmentsUrl?: string;
-  owner: {
+  /** Only set when verified against the business's own site. */
+  owner?: {
     name: string;
     bio?: string;
+    /** True only where the business's own site names this person as its founder. */
+    founderVerified?: true;
   };
   image: string;
   services: string[];

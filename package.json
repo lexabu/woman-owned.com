@@ -4,17 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && next-sitemap",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "sitemap": "next-sitemap"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
     "next": "^16.4.6",
-    "next-sitemap": "^4.2.3",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },

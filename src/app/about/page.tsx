@@ -1,10 +1,12 @@
 import { Heart, Target, Users, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "About Us | Woman-Owned",
   description: "Learn about our mission to support women entrepreneurs and connect communities with amazing women-owned businesses.",
-};
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (

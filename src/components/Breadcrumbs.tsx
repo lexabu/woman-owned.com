@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight, Home } from 'lucide-react';
+import { absoluteUrl } from '@/lib/seo';
 
 export interface BreadcrumbItem {
   label: string;
@@ -20,7 +21,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      ...(item.href && { "item": `https://woman-owned.com${item.href}` })
+      ...(item.href && { "item": absoluteUrl(item.href) })
     }))
   };
 

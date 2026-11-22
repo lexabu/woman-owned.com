@@ -73,7 +73,7 @@ Currently featuring amazing women-owned businesses in Lexington, Kentucky:
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
-- **SEO**: next-sitemap, structured data (JSON-LD)
+- **SEO**: Next.js metadata routes (`sitemap.ts`, `robots.ts`, `/llms.txt`), structured data (JSON-LD)
 - **Deployment**: Vercel (recommended)
 
 ## 📈 SEO Features

@@ -1,16 +1,21 @@
 import Link from 'next/link';
 import { MapPin, Building2, Filter } from 'lucide-react';
 import BusinessCard from '@/components/BusinessCard';
+import JsonLd from '@/components/JsonLd';
 import { businesses, categories, cities } from '@/data/businesses';
+import { pageMetadata } from '@/lib/seo';
+import { itemListJsonLd } from '@/lib/structured-data';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Business Directory | Woman-Owned",
   description: "Browse our complete directory of women-owned businesses. Find amazing local businesses by city and category.",
-};
+  path: '/directory',
+});
 
 export default function DirectoryPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <JsonLd data={itemListJsonLd('Women-owned business directory', businesses)} />
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

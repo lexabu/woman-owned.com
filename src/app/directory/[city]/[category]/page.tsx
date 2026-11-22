@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { MapPin, Tag } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import BusinessCard from '@/components/BusinessCard';
+import JsonLd from '@/components/JsonLd';
+import { pageMetadata } from '@/lib/seo';
+import { itemListJsonLd } from '@/lib/structured-data';
 import { 
   getBusinessesByCityAndCategory,
   getCityBySlug, 
@@ -30,10 +33,11 @@ export async function generateMetadata({ params }: CityCategory) {
     };
   }
 
-  return {
+  return pageMetadata({
     title: `${category.name} in ${city.name} | ${APP_CONFIG.NAME}`,
     description: `Find women-owned ${category.name.toLowerCase()} businesses in ${city.name}, ${city.state}. Support local female entrepreneurs in your area.`,
-  };
+    path: `/directory/${city.slug}/${category.slug}`,
+  });
 }
 
 export async function generateStaticParams() {
@@ -110,6 +114,7 @@ export default async function CityCategory({ params }: CityCategory) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {businesses.length > 0 ? (
           <>
+            <JsonLd data={itemListJsonLd(`Women-owned ${category.name} businesses in ${city.name}, ${city.state}`, businesses)} />
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 {category.name} in {city.name}

@@ -42,14 +42,16 @@ export default function BusinessCard({ business }: BusinessCardProps) {
           >
             Learn More
           </Link>
-          <a
-            href={business.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors"
-          >
-            <ExternalLink className="h-4 w-4" />
-          </a>
+          {business.website && (
+            <a
+              href={business.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          )}
         </div>
       </div>
     </div>

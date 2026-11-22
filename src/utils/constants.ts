@@ -3,7 +3,7 @@ export const APP_CONFIG = {
   NAME: 'Woman-Owned',
   TAGLINE: 'Discover Amazing Women-Owned Businesses',
   DESCRIPTION: 'Supporting women entrepreneurs and connecting you with incredible local businesses that make our communities stronger.',
-  BASE_URL: 'https://woman-owned.com',
+  BASE_URL: 'https://www.woman-owned.com',
 } as const;
 
 // Business categories

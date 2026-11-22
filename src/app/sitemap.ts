@@ -1,76 +1,32 @@
 import { MetadataRoute } from 'next';
-import { businesses, categories } from '@/data/businesses';
+import { businesses, categories, cities } from '@/data/businesses';
+import { wbeCertificationGuide } from '@/data/resources';
+import { absoluteUrl, businessPath } from '@/lib/seo';
+import { getBusinessesByCityAndCategory } from '@/utils/businessUtils';
 
+/**
+ * The only sitemap source. lastmod is set only where the data records a real edit date (the guides);
+ * everything else omits it rather than claim "changed at build time".
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://woman-owned.com';
-  
-  // Static pages
-  const staticPages = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/directory`,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/directory/lexington`,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/submit`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/resources`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/resources/wbe-certification-guide`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-    },
+  const entry = (path: string, lastModified?: string) => ({ url: absoluteUrl(path), lastModified });
+
+  const cityPages = cities.flatMap((city) => {
+    const categoryPages = categories
+      .filter((category) => getBusinessesByCityAndCategory(city.slug, category.slug).length > 0)
+      .map((category) => entry(`/directory/${city.slug}/${category.slug}`));
+    return [entry(`/directory/${city.slug}`), ...categoryPages];
+  });
+
+  return [
+    entry('/'),
+    entry('/directory'),
+    ...cityPages,
+    ...businesses.map((business) => entry(businessPath(business))),
+    entry('/resources', wbeCertificationGuide.dateModified),
+    entry(wbeCertificationGuide.path, wbeCertificationGuide.dateModified),
+    entry('/about'),
+    entry('/submit'),
+    entry('/contact'),
   ];
-
-  // Business pages
-  const businessPages = businesses.map((business) => ({
-    url: `${baseUrl}/business/${business.slug}`,
-    lastModified: new Date(business.createdAt),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
-
-  // Category pages
-  const categoryPages = categories.map((category) => ({
-    url: `${baseUrl}/directory/lexington/${category.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
-
-  return [...staticPages, ...businessPages, ...categoryPages];
 }

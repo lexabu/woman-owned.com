@@ -1,15 +1,18 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, FileCheck, Award } from 'lucide-react';
+import { wbeCertificationGuide } from '@/data/resources';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Resources for Women-Owned Businesses | Woman-Owned',
   description:
     'Practical guides on certification, classification, and growth for women-owned businesses. Start with our WBE certification guide.',
-};
+  path: '/resources',
+});
 
 const guides = [
   {
-    href: '/resources/wbe-certification-guide',
+    href: wbeCertificationGuide.path,
     title: 'WBE Certification: A Complete Guide',
     description:
       'What WBE certification is, who certifies it, what it costs, and how to use SIC and NAICS codes for both certification and free industry benchmarking. Includes a step-by-step on updating your D&B profile.',

@@ -1,10 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ExternalLink, MapPin, Phone, Mail, Instagram, Facebook, Twitter } from 'lucide-react';
+import { ArrowLeft, ExternalLink, MapPin, Phone, Mail, Instagram, Facebook, Twitter, type LucideIcon } from 'lucide-react';
 import SocialShare from '@/components/SocialShare';
-import { getBusinessBySlug } from '@/lib/utils';
+import JsonLd from '@/components/JsonLd';
 import { businesses } from '@/data/businesses';
+import { absoluteUrl, businessImage, businessPath, pageMetadata } from '@/lib/seo';
+import { businessJsonLd } from '@/lib/structured-data';
+import { getBusinessBySlug, getDirectorySlugs, socialProfiles, type SocialNetwork } from '@/utils/businessUtils';
+
+const SOCIAL_ICONS: Record<SocialNetwork, LucideIcon> = {
+  instagram: Instagram,
+  facebook: Facebook,
+  twitter: Twitter,
+};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -26,22 +35,15 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const image = businessImage(business);
   return {
-    title: `${business.name} | Woman-Owned Business in ${business.city}`,
-    description: business.description,
+    ...pageMetadata({
+      title: `${business.name} | Woman-Owned Business in ${business.city}`,
+      description: business.description,
+      path: businessPath(business),
+      images: image ? [image] : undefined,
+    }),
     keywords: `${business.name}, women-owned business, ${business.category}, ${business.city}, ${business.state}, ${business.services.join(', ')}`,
-    openGraph: {
-      title: `${business.name} | Woman-Owned Business`,
-      description: business.description,
-      type: "website",
-      images: [business.image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${business.name} | Woman-Owned Business`,
-      description: business.description,
-      images: [business.image],
-    },
   };
 }
 
@@ -53,38 +55,13 @@ export default async function BusinessPage({ params }: PageProps) {
     notFound();
   }
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": business.name,
-    "description": business.description,
-    "url": business.website,
-    "image": business.image,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": business.city,
-      "addressRegion": business.state,
-      "addressCountry": "US"
-    },
-    "telephone": business.contact?.phone,
-    "email": business.contact?.email,
-    "founder": {
-      "@type": "Person",
-      "name": business.owner.name
-    },
-    "serviceArea": {
-      "@type": "City",
-      "name": business.city
-    }
-  };
+  const socials = socialProfiles(business);
+  const { city: citySlug, category: categorySlug } = getDirectorySlugs(business);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      
+      <JsonLd data={businessJsonLd(business)} />
+
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -128,19 +105,21 @@ export default async function BusinessPage({ params }: PageProps) {
                   
                   <div className="flex items-center gap-3">
                     <SocialShare
-                      url={`https://woman-owned.com/business/${business.slug}`}
+                      url={absoluteUrl(businessPath(business))}
                       title={`Check out ${business.name} - Woman-Owned Business`}
                       description={business.description}
                     />
-                    <a
-                      href={business.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-navy-600 hover:bg-navy-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center"
-                    >
-                      Visit Website
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
+                    {business.website && (
+                      <a
+                        href={business.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-navy-600 hover:bg-navy-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center"
+                      >
+                        Visit Website
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
                 
@@ -149,12 +128,20 @@ export default async function BusinessPage({ params }: PageProps) {
                 </p>
                 
                 {/* Contact Info */}
-                {(business.contact?.phone || business.contact?.email) && (
+                {(business.contact?.address || business.contact?.phone || business.contact?.email) && (
                   <div className="mb-6">
                     <h3 className="font-semibold text-lg text-gray-900 mb-3">
                       {business.contact.label ?? 'Contact Information'}
                     </h3>
                     <div className="space-y-2">
+                      {business.contact.address && (
+                        <div className="flex items-center text-gray-600">
+                          <MapPin className="h-4 w-4 mr-2" />
+                          <address className="not-italic">
+                            {business.contact.address}, {business.city}, {business.state}
+                          </address>
+                        </div>
+                      )}
                       {business.contact.phone && (
                         <div className="flex items-center text-gray-600">
                           <Phone className="h-4 w-4 mr-2" />
@@ -188,38 +175,23 @@ export default async function BusinessPage({ params }: PageProps) {
                 )}
 
                 {/* Social Media */}
-                {business.socialMedia && (
+                {socials.length > 0 && (
                   <div className="flex space-x-4">
-                    {business.socialMedia.instagram && (
-                      <a
-                        href={`https://instagram.com/${business.socialMedia.instagram.replace('@', '')}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-coral-600 transition-colors"
-                      >
-                        <Instagram className="h-5 w-5" />
-                      </a>
-                    )}
-                    {business.socialMedia.facebook && (
-                      <a
-                        href={`https://facebook.com/${business.socialMedia.facebook}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-coral-600 transition-colors"
-                      >
-                        <Facebook className="h-5 w-5" />
-                      </a>
-                    )}
-                    {business.socialMedia.twitter && (
-                      <a
-                        href={`https://twitter.com/${business.socialMedia.twitter}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-coral-600 transition-colors"
-                      >
-                        <Twitter className="h-5 w-5" />
-                      </a>
-                    )}
+                    {socials.map(({ network, url }) => {
+                      const Icon = SOCIAL_ICONS[network];
+                      return (
+                        <a
+                          key={network}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${business.name} on ${network}`}
+                          className="text-gray-600 hover:text-coral-600 transition-colors"
+                        >
+                          <Icon className="h-5 w-5" />
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -244,7 +216,7 @@ export default async function BusinessPage({ params }: PageProps) {
               </div>
               
               {/* Owner Bio */}
-              {business.owner.bio && (
+              {business.owner?.bio && (
                 <div className="bg-white rounded-lg shadow-sm p-6">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">About {business.owner.name}</h2>
                   <p className="text-gray-700 leading-relaxed">{business.owner.bio}</p>
@@ -254,38 +226,44 @@ export default async function BusinessPage({ params }: PageProps) {
             
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="font-semibold text-lg text-gray-900 mb-4">Support This Business</h3>
-                <p className="text-gray-600 mb-4">
-                  Help support {business.owner.name} and other women entrepreneurs by visiting their website and sharing with your network.
-                </p>
-                <a
-                  href={business.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-coral-500 hover:bg-coral-600 text-white text-center px-4 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  Visit {business.name}
-                </a>
-              </div>
+              {business.website && (
+                <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-4">Support This Business</h3>
+                  <p className="text-gray-600 mb-4">
+                    Help support {business.owner?.name ?? business.name} and other women entrepreneurs by visiting their website and sharing with your network.
+                  </p>
+                  <a
+                    href={business.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-coral-500 hover:bg-coral-600 text-white text-center px-4 py-3 rounded-lg font-semibold transition-colors"
+                  >
+                    Visit {business.name}
+                  </a>
+                </div>
+              )}
               
               {/* Similar Businesses */}
-              <div className="bg-white rounded-lg shadow-sm p-6 mt-6">
+              <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="font-semibold text-lg text-gray-900 mb-4">More in {business.city}</h3>
-                <Link
-                  href={`/directory/${business.city.toLowerCase()}`}
-                  className="text-navy-600 hover:text-navy-700 font-medium"
-                >
-                  View all {business.city} businesses →
-                </Link>
-                <div className="mt-3">
+                {citySlug && (
                   <Link
-                    href={`/directory/${business.city.toLowerCase()}/${business.category.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                    href={`/directory/${citySlug}`}
                     className="text-navy-600 hover:text-navy-700 font-medium"
                   >
-                    More {business.category} businesses →
+                    View all {business.city} businesses →
                   </Link>
-                </div>
+                )}
+                {citySlug && categorySlug && (
+                  <div className="mt-3">
+                    <Link
+                      href={`/directory/${citySlug}/${categorySlug}`}
+                      className="text-navy-600 hover:text-navy-700 font-medium"
+                    >
+                      More {business.category} businesses →
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>
