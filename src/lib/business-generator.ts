@@ -68,12 +68,14 @@ export function formatBusinessForDataFile(business: Business): string {
     city: '${business.city}',
     state: '${business.state}',
     website: '${business.website}',
-    owner: {
+${
+      business.owner ? `    owner: {
       name: '${business.owner.name}',${
         business.owner.bio ? `\n      bio: '${business.owner.bio.replace(/'/g, "\\'")}'` : ''
       }
     },
-    image: '${business.image}',
+` : ''
+    }    image: '${business.image}',
     services: [
 ${business.services.map(service => `      '${service}'`).join(',\n')}
     ],${

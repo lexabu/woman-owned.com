@@ -34,13 +34,18 @@ export const websiteJsonLd = (): JsonLdNode => ({
   publisher: { '@type': 'Organization', '@id': ORGANIZATION_ID },
 });
 
-export function localBusinessJsonLd(business: Business): JsonLdNode {
+/**
+ * A listing is a LocalBusiness only when its public street address is known (and shown on the page);
+ * otherwise it is an Organization. Founder is emitted only for owners verified on the business's own site.
+ */
+export function businessJsonLd(business: Business): JsonLdNode {
   const pageUrl = absoluteUrl(businessPath(business));
   const image = businessImage(business);
   const sameAs = socialProfiles(business).map((profile) => profile.url);
+  const streetAddress = business.contact?.address;
 
   return {
-    '@type': 'LocalBusiness',
+    '@type': streetAddress ? 'LocalBusiness' : 'Organization',
     '@id': `${pageUrl}#business`,
     name: business.name,
     description: business.description,
@@ -49,20 +54,18 @@ export function localBusinessJsonLd(business: Business): JsonLdNode {
     image: image && absoluteUrl(image),
     telephone: business.contact?.phone,
     email: business.contact?.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: business.contact?.address,
-      addressLocality: business.city,
-      addressRegion: business.state,
-      addressCountry: 'US',
-    },
+    address: streetAddress
+      ? {
+          '@type': 'PostalAddress',
+          streetAddress,
+          addressLocality: business.city,
+          addressRegion: business.state,
+          addressCountry: 'US',
+        }
+      : undefined,
     areaServed: { '@type': 'City', name: business.city },
-    founder: { '@type': 'Person', name: business.owner.name, description: business.owner.bio },
+    founder: business.owner && { '@type': 'Person', name: business.owner.name },
     sameAs: sameAs.length > 0 ? sameAs : undefined,
-    makesOffer: business.services.map((service) => ({
-      '@type': 'Offer',
-      itemOffered: { '@type': 'Service', name: service },
-    })),
   };
 }
 

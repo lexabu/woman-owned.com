@@ -6,7 +6,7 @@ import SocialShare from '@/components/SocialShare';
 import JsonLd from '@/components/JsonLd';
 import { businesses } from '@/data/businesses';
 import { absoluteUrl, businessImage, businessPath, pageMetadata } from '@/lib/seo';
-import { localBusinessJsonLd } from '@/lib/structured-data';
+import { businessJsonLd } from '@/lib/structured-data';
 import { getBusinessBySlug, socialProfiles, type SocialNetwork } from '@/utils/businessUtils';
 
 const SOCIAL_ICONS: Record<SocialNetwork, LucideIcon> = {
@@ -59,7 +59,7 @@ export default async function BusinessPage({ params }: PageProps) {
 
   return (
     <>
-      <JsonLd data={localBusinessJsonLd(business)} />
+      <JsonLd data={businessJsonLd(business)} />
 
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b">
@@ -125,12 +125,20 @@ export default async function BusinessPage({ params }: PageProps) {
                 </p>
                 
                 {/* Contact Info */}
-                {(business.contact?.phone || business.contact?.email) && (
+                {(business.contact?.address || business.contact?.phone || business.contact?.email) && (
                   <div className="mb-6">
                     <h3 className="font-semibold text-lg text-gray-900 mb-3">
                       {business.contact.label ?? 'Contact Information'}
                     </h3>
                     <div className="space-y-2">
+                      {business.contact.address && (
+                        <div className="flex items-center text-gray-600">
+                          <MapPin className="h-4 w-4 mr-2" />
+                          <address className="not-italic">
+                            {business.contact.address}, {business.city}, {business.state}
+                          </address>
+                        </div>
+                      )}
                       {business.contact.phone && (
                         <div className="flex items-center text-gray-600">
                           <Phone className="h-4 w-4 mr-2" />
@@ -205,7 +213,7 @@ export default async function BusinessPage({ params }: PageProps) {
               </div>
               
               {/* Owner Bio */}
-              {business.owner.bio && (
+              {business.owner?.bio && (
                 <div className="bg-white rounded-lg shadow-sm p-6">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">About {business.owner.name}</h2>
                   <p className="text-gray-700 leading-relaxed">{business.owner.bio}</p>
@@ -218,7 +226,7 @@ export default async function BusinessPage({ params }: PageProps) {
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="font-semibold text-lg text-gray-900 mb-4">Support This Business</h3>
                 <p className="text-gray-600 mb-4">
-                  Help support {business.owner.name} and other women entrepreneurs by visiting their website and sharing with your network.
+                  Help support {business.owner?.name ?? business.name} and other women entrepreneurs by visiting their website and sharing with your network.
                 </p>
                 <a
                   href={business.website}

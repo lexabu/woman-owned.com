@@ -17,7 +17,7 @@ function buildLlmsTxt(): string {
     '',
     `> ${APP_CONFIG.NAME} (${absoluteUrl('/')}) is a directory of women-owned businesses in the United States. ` +
       `It lists ${businesses.length} businesses across ${citySections.length} cities; each listing gives the business's ` +
-      'description, category, city, owner, services and official website.',
+      'description, category, city, services and official website.',
     '',
     '## Key pages',
     '',
@@ -27,17 +27,16 @@ function buildLlmsTxt(): string {
     `- [Submit a business](${absoluteUrl('/submit')}): How a women-owned business can request a listing.`,
     `- [About](${absoluteUrl('/about')}): The directory's mission.`,
     '',
-    '## Businesses by city',
     ...citySections.flatMap(({ city, listings }) => [
+      `## ${city.name}, ${city.state}`,
       '',
-      `### [${city.name}, ${city.state}](${absoluteUrl(`/directory/${city.slug}`)})`,
-      '',
+      `- [${city.name} directory](${absoluteUrl(`/directory/${city.slug}`)}): All women-owned businesses listed in ${city.name}.`,
       ...listings.map(
         (business) =>
           `- [${business.name}](${absoluteUrl(businessPath(business))}): ${business.category}. ${business.description}`,
       ),
+      '',
     ]),
-    '',
   ];
   return lines.join('\n');
 }

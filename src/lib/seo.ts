@@ -11,14 +11,6 @@ export const businessPath = (business: Business): string => `/business/${busines
 export const businessImage = (business: Business): string | undefined =>
   business.image === DEFAULTS.PLACEHOLDER_IMAGE ? undefined : business.image;
 
-/** Last time a listing's content changed, as an ISO date. */
-export const businessLastModified = (business: Business): string =>
-  business.updatedAt ?? business.createdAt;
-
-/** Most recent change across a set of listings, for list pages' sitemap lastmod. */
-export const latestModified = (listings: Business[]): string | undefined =>
-  listings.map(businessLastModified).sort().at(-1);
-
 interface PageSeo {
   title: string;
   description: string;

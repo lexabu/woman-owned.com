@@ -8,7 +8,8 @@ export interface Business {
   state: string;
   website: string;
   appointmentsUrl?: string;
-  owner: {
+  /** Only set when verified against the business's own site. */
+  owner?: {
     name: string;
     bio?: string;
   };
@@ -27,8 +28,6 @@ export interface Business {
   };
   featured: boolean;
   createdAt: string;
-  /** ISO date of the last content change; drives sitemap lastmod. */
-  updatedAt?: string;
 }
 
 export interface City {

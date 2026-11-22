@@ -1,4 +1,4 @@
-import { EMAIL_COLORS } from '@/utils/constants';
+import { APP_CONFIG, EMAIL_COLORS } from '@/utils/constants';
 
 export interface BusinessSubmissionData {
   businessName: string;
@@ -302,7 +302,7 @@ export function generateBusinessOwnerConfirmationEmail(data: BusinessSubmissionD
         <div class="section">
           <h3>While You Wait</h3>
           <p>Explore other amazing women-owned businesses in our directory and share Woman-Owned.com with your network!</p>
-          <a href="https://woman-owned.com/directory" class="cta">Browse Directory</a>
+          <a href="${APP_CONFIG.BASE_URL}/directory" class="cta">Browse Directory</a>
         </div>
       </div>
       
@@ -339,7 +339,7 @@ WHILE YOU WAIT
 
 Explore other amazing women-owned businesses in our directory and share Woman-Owned.com with your network!
 
-Visit: https://woman-owned.com/directory
+Visit: ${APP_CONFIG.BASE_URL}/directory
 
 ---
 Questions? Reply to this email or contact us at hello@woman-owned.com
