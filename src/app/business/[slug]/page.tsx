@@ -151,7 +151,9 @@ export default async function BusinessPage({ params }: PageProps) {
                 {/* Contact Info */}
                 {(business.contact?.phone || business.contact?.email) && (
                   <div className="mb-6">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-3">Contact Information</h3>
+                    <h3 className="font-semibold text-lg text-gray-900 mb-3">
+                      {business.contact.label ?? 'Contact Information'}
+                    </h3>
                     <div className="space-y-2">
                       {business.contact.phone && (
                         <div className="flex items-center text-gray-600">
@@ -173,6 +175,18 @@ export default async function BusinessPage({ params }: PageProps) {
                   </div>
                 )}
                 
+                {business.appointmentsUrl && (
+                  <a
+                    href={business.appointmentsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-6 inline-flex items-center font-semibold text-navy-600 hover:underline"
+                  >
+                    Find a stylist for appointments
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                )}
+
                 {/* Social Media */}
                 {business.socialMedia && (
                   <div className="flex space-x-4">
