@@ -13,6 +13,8 @@ export interface Business {
   owner?: {
     name: string;
     bio?: string;
+    /** True only where the business's own site names this person as its founder. */
+    founderVerified?: true;
   };
   image: string;
   services: string[];

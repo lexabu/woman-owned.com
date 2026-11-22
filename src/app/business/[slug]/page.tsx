@@ -7,7 +7,7 @@ import JsonLd from '@/components/JsonLd';
 import { businesses } from '@/data/businesses';
 import { absoluteUrl, businessImage, businessPath, pageMetadata } from '@/lib/seo';
 import { businessJsonLd } from '@/lib/structured-data';
-import { getBusinessBySlug, socialProfiles, type SocialNetwork } from '@/utils/businessUtils';
+import { getBusinessBySlug, getDirectorySlugs, socialProfiles, type SocialNetwork } from '@/utils/businessUtils';
 
 const SOCIAL_ICONS: Record<SocialNetwork, LucideIcon> = {
   instagram: Instagram,
@@ -56,6 +56,7 @@ export default async function BusinessPage({ params }: PageProps) {
   }
 
   const socials = socialProfiles(business);
+  const { city: citySlug, category: categorySlug } = getDirectorySlugs(business);
 
   return (
     <>
@@ -245,20 +246,24 @@ export default async function BusinessPage({ params }: PageProps) {
               {/* Similar Businesses */}
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="font-semibold text-lg text-gray-900 mb-4">More in {business.city}</h3>
-                <Link
-                  href={`/directory/${business.city.toLowerCase()}`}
-                  className="text-navy-600 hover:text-navy-700 font-medium"
-                >
-                  View all {business.city} businesses →
-                </Link>
-                <div className="mt-3">
+                {citySlug && (
                   <Link
-                    href={`/directory/${business.city.toLowerCase()}/${business.category.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                    href={`/directory/${citySlug}`}
                     className="text-navy-600 hover:text-navy-700 font-medium"
                   >
-                    More {business.category} businesses →
+                    View all {business.city} businesses →
                   </Link>
-                </div>
+                )}
+                {citySlug && categorySlug && (
+                  <div className="mt-3">
+                    <Link
+                      href={`/directory/${citySlug}/${categorySlug}`}
+                      className="text-navy-600 hover:text-navy-700 font-medium"
+                    >
+                      More {business.category} businesses →
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -160,3 +160,11 @@ export const socialProfiles = (business: Business): { network: SocialNetwork; ur
   if (twitter) profiles.push({ network: 'twitter', url: `https://twitter.com/${twitter}` });
   return profiles;
 };
+
+/**
+ * Directory slugs for a business's city and category (undefined if not registered).
+ */
+export const getDirectorySlugs = (business: Business) => ({
+  city: cities.find((city) => city.name === business.city)?.slug,
+  category: categories.find((category) => category.name === business.category)?.slug,
+});

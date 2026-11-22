@@ -76,6 +76,7 @@ export const businesses: Business[] = [
     website: "https://shopmaraishome.com",
     owner: {
       name: "Katie DesMarais",
+      founderVerified: true,
     },
     image: "/images/placeholder.svg",
     services: [
@@ -473,19 +474,28 @@ export const businesses: Business[] = [
     name: "Caroline & Company",
     slug: "caroline-company",
     description:
-      "Boutique marketing and branding agency helping small businesses tell their story and connect with their audience. Specializing in authentic brand development.",
-    category: "Education & Services",
+      "Gift and home boutique offering gifts, home décor, accessories, children's clothing and baby gifts, with personalization and monogramming, in Lafayette, Louisiana.",
+    category: "Home & Lifestyle",
     city: "Lafayette",
     state: "Louisiana",
+    website: "https://www.carolineandco.com/",
     image: "/images/placeholder.svg",
     services: [
-      "Brand Development",
-      "Marketing Strategy",
-      "Social Media Management",
-      "Website Design",
-      "Content Creation",
-      "Business Consulting",
+      "Gifts",
+      "Home Décor",
+      "Accessories",
+      "Children's Clothing",
+      "Baby Gifts",
+      "Personalization & Monogramming",
     ],
+    socialMedia: {
+      instagram: "@carolineandco",
+      facebook: "CarolineAndCompany",
+    },
+    contact: {
+      address: "1800 Kaliste Saloom Rd",
+      phone: "+1-337-984-3263",
+    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -588,27 +598,6 @@ export const businesses: Business[] = [
     createdAt: "2025-01-01",
   },
   {
-    id: "25",
-    name: "Living Walls, the City Speaks",
-    slug: "living-walls-city-speaks",
-    description:
-      "Public art organization creating vibrant murals and street art installations that transform Atlanta's urban landscape and foster community dialogue.",
-    category: "Home & Lifestyle",
-    city: "Atlanta",
-    state: "Georgia",
-    image: "/images/placeholder.svg",
-    services: [
-      "Mural Creation",
-      "Public Art",
-      "Community Projects",
-      "Art Education",
-      "Artist Workshops",
-      "Cultural Events",
-    ],
-    featured: true,
-    createdAt: "2025-01-01",
-  },
-  {
     id: "26",
     name: "Star Provisions Market",
     slug: "star-provisions-market",
@@ -634,9 +623,9 @@ export const businesses: Business[] = [
 export const categories = [
   { name: "Beauty & Wellness", slug: "beauty", businessCount: 2 },
   { name: "Fashion & Jewelry", slug: "fashion", businessCount: 8 },
-  { name: "Home & Lifestyle", slug: "home", businessCount: 6 },
+  { name: "Home & Lifestyle", slug: "home", businessCount: 8 },
   { name: "Food & Dining", slug: "food", businessCount: 4 },
-  { name: "Education & Services", slug: "services", businessCount: 6 },
+  { name: "Education & Services", slug: "services", businessCount: 3 },
 ];
 
 export const cities = [
@@ -660,5 +649,5 @@ export const cities = [
     state: "Louisiana",
     businessCount: 14,
   },
-  { name: "Atlanta", slug: "atlanta", state: "Georgia", businessCount: 6 },
+  { name: "Atlanta", slug: "atlanta", state: "Georgia", businessCount: 5 },
 ];

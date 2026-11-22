@@ -36,7 +36,7 @@ export const websiteJsonLd = (): JsonLdNode => ({
 
 /**
  * A listing is a LocalBusiness only when its public street address is known (and shown on the page);
- * otherwise it is an Organization. Founder is emitted only for owners verified on the business's own site.
+ * otherwise it is an Organization. Founder is emitted only where the business's own site names one (owner.founderVerified).
  */
 export function businessJsonLd(business: Business): JsonLdNode {
   const pageUrl = absoluteUrl(businessPath(business));
@@ -64,7 +64,7 @@ export function businessJsonLd(business: Business): JsonLdNode {
         }
       : undefined,
     areaServed: { '@type': 'City', name: business.city },
-    founder: business.owner && { '@type': 'Person', name: business.owner.name },
+    founder: business.owner?.founderVerified && { '@type': 'Person', name: business.owner.name },
     sameAs: sameAs.length > 0 ? sameAs : undefined,
   };
 }
