@@ -15,7 +15,7 @@ A modern, SEO-optimized directory platform celebrating women-owned businesses ac
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 22 
 - npm or yarn
 
 ### Installation
