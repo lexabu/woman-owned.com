@@ -7,6 +7,7 @@ export interface Business {
   city: string;
   state: string;
   website: string;
+  appointmentsUrl?: string;
   owner: {
     name: string;
     bio?: string;
@@ -19,6 +20,7 @@ export interface Business {
     twitter?: string;
   };
   contact?: {
+    label?: string;
     phone?: string;
     email?: string;
     address?: string;
