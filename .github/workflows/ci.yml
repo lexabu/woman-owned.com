@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -35,6 +35,7 @@ jobs:
       run: npx tsc --noEmit
 
     - name: Build
+      if: github.event_name != 'workflow_dispatch'
       run: npm run build
 
   lighthouse:
