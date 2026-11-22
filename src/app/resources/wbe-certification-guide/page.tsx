@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowLeft, CheckCircle2, AlertCircle, ExternalLink } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
+import { wbeCertificationGuide as guide } from '@/data/resources';
+import { pageMetadata } from '@/lib/seo';
+import { articleJsonLd } from '@/lib/structured-data';
 
-export const metadata = {
-  title: 'WBE Certification: A Complete Guide for Women Business Owners | Woman-Owned',
-  description:
-    'Everything women business owners need to know about WBE certification: what it is, who certifies it, what it costs, the real benefits, and how SIC and NAICS codes fit in.',
-  alternates: {
-    canonical: 'https://woman-owned.com/resources/wbe-certification-guide',
-  },
-};
+export const metadata = pageMetadata({
+  title: `${guide.title} | Woman-Owned`,
+  description: guide.description,
+  path: guide.path,
+  type: 'article',
+});
 
 const sections = [
   { id: 'what-is-wbe', label: 'What is WBE certification?' },
@@ -26,6 +28,7 @@ const sections = [
 export default function WbeCertificationGuidePage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <JsonLd data={articleJsonLd(guide)} />
       {/* Hero */}
       <div className="bg-gradient-to-br from-navy-600 via-navy-700 to-navy-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -39,14 +42,20 @@ export default function WbeCertificationGuidePage() {
           <p className="text-coral-300 font-semibold uppercase tracking-wide text-sm mb-3">
             Certification Guide
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            WBE Certification: A Complete Guide for Women Business Owners
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{guide.title}</h1>
           <p className="text-xl text-navy-200">
             What it is, who issues it, what it costs, and the real-world benefits — plus how
             classification codes like SIC and NAICS fit in.
           </p>
-          <p className="text-sm text-navy-300 mt-6">15 min read · Updated April 2026</p>
+          <p className="text-sm text-navy-300 mt-6">15 min read · Updated{' '}
+            <time dateTime={guide.dateModified}>
+              {new Date(`${guide.dateModified}T00:00:00Z`).toLocaleDateString('en-US', {
+                month: 'long',
+                year: 'numeric',
+                timeZone: 'UTC',
+              })}
+            </time>
+          </p>
         </div>
       </div>
 

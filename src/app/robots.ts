@@ -1,12 +1,27 @@
 import { MetadataRoute } from 'next';
+import { absoluteUrl } from '@/lib/seo';
+
+/** AI assistants and search crawlers we explicitly welcome, so a future `*` rule can't silently block them. */
+const WELCOMED_CRAWLERS = [
+  'GPTBot',
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'PerplexityBot',
+  'Perplexity-User',
+  'ClaudeBot',
+  'Claude-SearchBot',
+  'Claude-User',
+  'Google-Extended',
+  'Bingbot',
+  'Applebot-Extended',
+];
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
-    },
-    sitemap: 'https://woman-owned.com/sitemap.xml',
+    rules: [
+      { userAgent: WELCOMED_CRAWLERS, allow: '/' },
+      { userAgent: '*', allow: '/', disallow: '/private/' },
+    ],
+    sitemap: absoluteUrl('/sitemap.xml'),
   };
 }

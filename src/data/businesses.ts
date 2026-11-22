@@ -32,6 +32,7 @@ export const businesses: Business[] = [
     },
     featured: true,
     createdAt: "2025-01-01",
+    updatedAt: "2026-11-22",
   },
   {
     id: "2",
@@ -66,6 +67,7 @@ export const businesses: Business[] = [
     },
     featured: true,
     createdAt: "2025-01-01",
+    updatedAt: "2026-11-22",
   },
   {
     id: "3",
@@ -100,6 +102,7 @@ export const businesses: Business[] = [
     },
     featured: true,
     createdAt: "2025-01-01",
+    updatedAt: "2026-11-22",
   },
   {
     id: "4",

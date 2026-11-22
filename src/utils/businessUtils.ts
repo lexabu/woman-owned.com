@@ -146,3 +146,17 @@ export const cityExists = (citySlug: string): boolean => {
 export const categoryExists = (categorySlug: string): boolean => {
   return categories.some(category => category.slug === categorySlug.toLowerCase());
 };
+
+export type SocialNetwork = 'instagram' | 'facebook' | 'twitter';
+
+/**
+ * Public profile URLs for a business's social accounts, in display order.
+ */
+export const socialProfiles = (business: Business): { network: SocialNetwork; url: string }[] => {
+  const { instagram, facebook, twitter } = business.socialMedia ?? {};
+  const profiles: { network: SocialNetwork; url: string }[] = [];
+  if (instagram) profiles.push({ network: 'instagram', url: `https://instagram.com/${instagram.replace('@', '')}` });
+  if (facebook) profiles.push({ network: 'facebook', url: `https://facebook.com/${facebook}` });
+  if (twitter) profiles.push({ network: 'twitter', url: `https://twitter.com/${twitter}` });
+  return profiles;
+};

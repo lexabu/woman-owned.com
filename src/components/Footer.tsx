@@ -71,7 +71,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © 2025 Woman-Owned. All rights reserved. Supporting women entrepreneurs nationwide.
+            © {new Date().getFullYear()} Woman-Owned. All rights reserved. Supporting women entrepreneurs nationwide.
           </p>
         </div>
       </div>

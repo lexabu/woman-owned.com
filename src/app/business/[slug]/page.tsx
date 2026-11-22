@@ -1,10 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ExternalLink, MapPin, Phone, Mail, Instagram, Facebook, Twitter } from 'lucide-react';
+import { ArrowLeft, ExternalLink, MapPin, Phone, Mail, Instagram, Facebook, Twitter, type LucideIcon } from 'lucide-react';
 import SocialShare from '@/components/SocialShare';
-import { getBusinessBySlug } from '@/lib/utils';
+import JsonLd from '@/components/JsonLd';
 import { businesses } from '@/data/businesses';
+import { absoluteUrl, businessImage, businessPath, pageMetadata } from '@/lib/seo';
+import { localBusinessJsonLd } from '@/lib/structured-data';
+import { getBusinessBySlug, socialProfiles, type SocialNetwork } from '@/utils/businessUtils';
+
+const SOCIAL_ICONS: Record<SocialNetwork, LucideIcon> = {
+  instagram: Instagram,
+  facebook: Facebook,
+  twitter: Twitter,
+};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -26,22 +35,15 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const image = businessImage(business);
   return {
-    title: `${business.name} | Woman-Owned Business in ${business.city}`,
-    description: business.description,
+    ...pageMetadata({
+      title: `${business.name} | Woman-Owned Business in ${business.city}`,
+      description: business.description,
+      path: businessPath(business),
+      images: image ? [image] : undefined,
+    }),
     keywords: `${business.name}, women-owned business, ${business.category}, ${business.city}, ${business.state}, ${business.services.join(', ')}`,
-    openGraph: {
-      title: `${business.name} | Woman-Owned Business`,
-      description: business.description,
-      type: "website",
-      images: [business.image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${business.name} | Woman-Owned Business`,
-      description: business.description,
-      images: [business.image],
-    },
   };
 }
 
@@ -53,38 +55,12 @@ export default async function BusinessPage({ params }: PageProps) {
     notFound();
   }
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": business.name,
-    "description": business.description,
-    "url": business.website,
-    "image": business.image,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": business.city,
-      "addressRegion": business.state,
-      "addressCountry": "US"
-    },
-    "telephone": business.contact?.phone,
-    "email": business.contact?.email,
-    "founder": {
-      "@type": "Person",
-      "name": business.owner.name
-    },
-    "serviceArea": {
-      "@type": "City",
-      "name": business.city
-    }
-  };
+  const socials = socialProfiles(business);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      
+      <JsonLd data={localBusinessJsonLd(business)} />
+
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -128,7 +104,7 @@ export default async function BusinessPage({ params }: PageProps) {
                   
                   <div className="flex items-center gap-3">
                     <SocialShare
-                      url={`https://woman-owned.com/business/${business.slug}`}
+                      url={absoluteUrl(businessPath(business))}
                       title={`Check out ${business.name} - Woman-Owned Business`}
                       description={business.description}
                     />
@@ -188,38 +164,23 @@ export default async function BusinessPage({ params }: PageProps) {
                 )}
 
                 {/* Social Media */}
-                {business.socialMedia && (
+                {socials.length > 0 && (
                   <div className="flex space-x-4">
-                    {business.socialMedia.instagram && (
-                      <a
-                        href={`https://instagram.com/${business.socialMedia.instagram.replace('@', '')}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-coral-600 transition-colors"
-                      >
-                        <Instagram className="h-5 w-5" />
-                      </a>
-                    )}
-                    {business.socialMedia.facebook && (
-                      <a
-                        href={`https://facebook.com/${business.socialMedia.facebook}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-coral-600 transition-colors"
-                      >
-                        <Facebook className="h-5 w-5" />
-                      </a>
-                    )}
-                    {business.socialMedia.twitter && (
-                      <a
-                        href={`https://twitter.com/${business.socialMedia.twitter}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-coral-600 transition-colors"
-                      >
-                        <Twitter className="h-5 w-5" />
-                      </a>
-                    )}
+                    {socials.map(({ network, url }) => {
+                      const Icon = SOCIAL_ICONS[network];
+                      return (
+                        <a
+                          key={network}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${business.name} on ${network}`}
+                          className="text-gray-600 hover:text-coral-600 transition-colors"
+                        >
+                          <Icon className="h-5 w-5" />
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
               </div>

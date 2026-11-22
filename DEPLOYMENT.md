@@ -9,9 +9,6 @@ This guide covers deployment options for the Woman-Owned.com website, from devel
 Create a `.env.local` file (never commit this to version control):
 
 ```bash
-# Site Configuration
-SITE_URL=https://woman-owned.com
-
 # Analytics (Optional)
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
@@ -68,7 +65,7 @@ In the Vercel dashboard:
 1. Go to Settings → Domains
 2. Add your custom domain (e.g., `woman-owned.com`)
 3. Follow Vercel's DNS configuration instructions
-4. Update `SITE_URL` environment variable to match your domain
+4. The canonical host is `APP_CONFIG.BASE_URL` in `src/utils/constants.ts` (www); keep the apex redirecting to it
 
 ### Step 4: Deploy
 

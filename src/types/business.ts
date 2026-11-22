@@ -27,6 +27,8 @@ export interface Business {
   };
   featured: boolean;
   createdAt: string;
+  /** ISO date of the last content change; drives sitemap lastmod. */
+  updatedAt?: string;
 }
 
 export interface City {

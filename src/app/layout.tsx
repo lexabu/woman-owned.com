@@ -5,6 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import SkipLink from "@/components/SkipLink";
+import JsonLd from "@/components/JsonLd";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structured-data";
+import { APP_CONFIG } from "@/utils/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://woman-owned.com'),
+  metadataBase: new URL(APP_CONFIG.BASE_URL),
   title: "Woman-Owned | Discover Amazing Women-Owned Businesses",
   description: "Supporting women entrepreneurs and connecting you with incredible local businesses that make our communities stronger. Discover women-owned businesses in your area.",
   keywords: "women-owned businesses, female entrepreneurs, local businesses, women business directory, support women",
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
     title: "Woman-Owned | Discover Amazing Women-Owned Businesses",
     description: "Supporting women entrepreneurs and connecting you with incredible local businesses that make our communities stronger.",
     type: "website",
-    url: "https://woman-owned.com",
+    siteName: APP_CONFIG.NAME,
   },
   twitter: {
     card: "summary_large_image",
@@ -48,6 +51,8 @@ export default function RootLayout({
           gaId={process.env.NEXT_PUBLIC_GA_ID}
           gtmId={process.env.NEXT_PUBLIC_GTM_ID}
         />
+        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
         <SkipLink />
         <Header />
         <main id="main-content" tabIndex={-1}>{children}</main>
