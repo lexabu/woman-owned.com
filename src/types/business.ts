@@ -6,7 +6,8 @@ export interface Business {
   category: string;
   city: string;
   state: string;
-  website: string;
+  /** Only set when the business's own site is live and verified. */
+  website?: string;
   appointmentsUrl?: string;
   /** Only set when verified against the business's own site. */
   owner?: {

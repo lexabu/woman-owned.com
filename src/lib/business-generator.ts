@@ -67,8 +67,7 @@ export function formatBusinessForDataFile(business: Business): string {
     category: '${business.category}',
     city: '${business.city}',
     state: '${business.state}',
-    website: '${business.website}',
-${
+${business.website ? `    website: '${business.website}',\n` : ''}${
       business.owner ? `    owner: {
       name: '${business.owner.name}',${
         business.owner.bio ? `\n      bio: '${business.owner.bio.replace(/'/g, "\\'")}'` : ''

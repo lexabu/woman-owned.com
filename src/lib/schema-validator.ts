@@ -18,7 +18,6 @@ export function validateBusiness(business: Business): ValidationResult {
   if (!business.category?.trim()) errors.push('Business category is required');
   if (!business.city?.trim()) errors.push('City is required');
   if (!business.state?.trim()) errors.push('State is required');
-  if (!business.website?.trim()) errors.push('Website URL is required');
   if (business.owner && !business.owner.name.trim()) errors.push('Owner name must not be blank');
   if (!business.image?.trim()) errors.push('Business image is required');
   if (!business.services?.length) errors.push('At least one service is required');

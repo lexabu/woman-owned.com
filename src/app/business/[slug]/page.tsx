@@ -108,15 +108,17 @@ export default async function BusinessPage({ params }: PageProps) {
                       title={`Check out ${business.name} - Woman-Owned Business`}
                       description={business.description}
                     />
-                    <a
-                      href={business.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-navy-600 hover:bg-navy-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center"
-                    >
-                      Visit Website
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
+                    {business.website && (
+                      <a
+                        href={business.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-navy-600 hover:bg-navy-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center"
+                      >
+                        Visit Website
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
                 
@@ -223,23 +225,25 @@ export default async function BusinessPage({ params }: PageProps) {
             
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="font-semibold text-lg text-gray-900 mb-4">Support This Business</h3>
-                <p className="text-gray-600 mb-4">
-                  Help support {business.owner?.name ?? business.name} and other women entrepreneurs by visiting their website and sharing with your network.
-                </p>
-                <a
-                  href={business.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-coral-500 hover:bg-coral-600 text-white text-center px-4 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  Visit {business.name}
-                </a>
-              </div>
+              {business.website && (
+                <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-4">Support This Business</h3>
+                  <p className="text-gray-600 mb-4">
+                    Help support {business.owner?.name ?? business.name} and other women entrepreneurs by visiting their website and sharing with your network.
+                  </p>
+                  <a
+                    href={business.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-coral-500 hover:bg-coral-600 text-white text-center px-4 py-3 rounded-lg font-semibold transition-colors"
+                  >
+                    Visit {business.name}
+                  </a>
+                </div>
+              )}
               
               {/* Similar Businesses */}
-              <div className="bg-white rounded-lg shadow-sm p-6 mt-6">
+              <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="font-semibold text-lg text-gray-900 mb-4">More in {business.city}</h3>
                 <Link
                   href={`/directory/${business.city.toLowerCase()}`}

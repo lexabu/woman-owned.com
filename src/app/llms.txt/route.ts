@@ -17,7 +17,7 @@ function buildLlmsTxt(): string {
     '',
     `> ${APP_CONFIG.NAME} (${absoluteUrl('/')}) is a directory of women-owned businesses in the United States. ` +
       `It lists ${businesses.length} businesses across ${citySections.length} cities; each listing gives the business's ` +
-      'description, category, city, services and official website.',
+      "description, category, city and services, plus the business's own website, contact details and social profiles where verified.",
     '',
     '## Key pages',
     '',

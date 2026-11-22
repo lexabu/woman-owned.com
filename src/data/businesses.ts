@@ -53,7 +53,7 @@ export const businesses: Business[] = [
       "Appraisals",
     ],
     socialMedia: {
-      instagram: "@almazafinejewelry",
+      instagram: "@almazafinejewelry1",
       facebook: "AlmazaFineJewelry",
     },
     contact: {
@@ -87,8 +87,7 @@ export const businesses: Business[] = [
       "Custom Orders",
     ],
     socialMedia: {
-      instagram: "maraishome/",
-      facebook: "ShopMaraisHome",
+      instagram: "@maraishome",
     },
     contact: {
       phone: "+1-859-800-2481",
@@ -106,7 +105,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Los Angeles",
     state: "California",
-    website: "https://sunsetboulevardla.com",
     image: "/images/placeholder.svg",
     services: [
       "Women's Fashion",
@@ -115,13 +113,6 @@ export const businesses: Business[] = [
       "Custom Alterations",
       "Special Occasion Wear",
     ],
-    socialMedia: {
-      instagram: "@sunsetboulevardla",
-      facebook: "SunsetBoulevardBoutique",
-    },
-    contact: {
-      email: "hello@sunsetboulevardla.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -134,7 +125,6 @@ export const businesses: Business[] = [
     category: "Beauty & Wellness",
     city: "Miami",
     state: "Florida",
-    website: "https://oceandrivewellness.com",
     image: "/images/placeholder.svg",
     services: [
       "Massage Therapy",
@@ -144,13 +134,6 @@ export const businesses: Business[] = [
       "Aromatherapy",
       "Reiki Healing",
     ],
-    socialMedia: {
-      instagram: "@oceandrivewellness",
-      facebook: "OceanDriveWellness",
-    },
-    contact: {
-      email: "relax@oceandrivewellness.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -163,7 +146,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "New Orleans",
     state: "Louisiana",
-    website: "https://frenchquarterantiques.com",
     image: "/images/placeholder.svg",
     services: [
       "Antique Furniture",
@@ -173,13 +155,6 @@ export const businesses: Business[] = [
       "Restoration Services",
       "Custom Pieces",
     ],
-    socialMedia: {
-      instagram: "@frenchquarterantiques",
-      facebook: "FrenchQuarterAntiques",
-    },
-    contact: {
-      email: "marie@frenchquarterantiques.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -192,7 +167,6 @@ export const businesses: Business[] = [
     category: "Food & Dining",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://cajunspicekitchen.com",
     image: "/images/placeholder.svg",
     services: [
       "Cajun Cuisine",
@@ -202,13 +176,6 @@ export const businesses: Business[] = [
       "Take-Out Orders",
       "Family Meals",
     ],
-    socialMedia: {
-      instagram: "@cajunspicekitchen",
-      facebook: "CajunSpiceKitchen",
-    },
-    contact: {
-      email: "evangeline@cajunspicekitchen.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -233,11 +200,11 @@ export const businesses: Business[] = [
       "Floral Design Classes",
     ],
     socialMedia: {
-      instagram: "@somethingborrowedblooms",
+      instagram: "@sbblooms",
       facebook: "SomethingBorrowedBlooms",
     },
     contact: {
-      email: "hello@somethingborrowedblooms.com",
+      email: "info@sbblooms.com",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -251,7 +218,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://lafemmelingerie.com",
     image: "/images/placeholder.svg",
     services: [
       "Lingerie",
@@ -261,13 +227,6 @@ export const businesses: Business[] = [
       "Bridal Lingerie",
       "Personal Consultations",
     ],
-    socialMedia: {
-      instagram: "@lafemmelingerie",
-      facebook: "LaFemmeLingerie",
-    },
-    contact: {
-      email: "info@lafemmelingerie.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -280,7 +239,7 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://swoonboutiquelafayette.com",
+    website: "https://www.flutterlafayette.com/",
     image: "/images/placeholder.svg",
     services: [
       "Women's Fashion",
@@ -290,12 +249,8 @@ export const businesses: Business[] = [
       "Outfit Coordination",
       "Special Occasion Wear",
     ],
-    socialMedia: {
-      instagram: "@swoonboutiquelafayette",
-      facebook: "SwoonBoutiqueLafayette",
-    },
     contact: {
-      email: "hello@swoonboutiquelafayette.com",
+      email: "support@flutterlafayette.com",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -309,7 +264,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://amazingspacesorganizing.com",
     image: "/images/placeholder.svg",
     services: [
       "Home Organizing",
@@ -319,13 +273,6 @@ export const businesses: Business[] = [
       "Storage Solutions",
       "Room Makeovers",
     ],
-    socialMedia: {
-      instagram: "@amazingspacesorganizing",
-      facebook: "AmazingSpacesOrganizing",
-    },
-    contact: {
-      email: "info@amazingspacesorganizing.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -352,9 +299,6 @@ export const businesses: Business[] = [
       instagram: "@mavenwomenswear",
       facebook: "MavenWomenswear",
     },
-    contact: {
-      email: "hello@mavenwomenswear.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -367,7 +311,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://brandycavittsshoefly.com",
     image: "/images/placeholder.svg",
     services: [
       "Women's Shoes",
@@ -377,13 +320,6 @@ export const businesses: Business[] = [
       "Casual Footwear",
       "Shoe Accessories",
     ],
-    socialMedia: {
-      instagram: "@brandycavittsshoefly",
-      facebook: "BrandyCavittsShoefly",
-    },
-    contact: {
-      email: "brandy@brandycavittsshoefly.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -425,7 +361,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://basinarts.com",
     image: "/images/placeholder.svg",
     services: [
       "Art Gallery",
@@ -435,13 +370,6 @@ export const businesses: Business[] = [
       "Gallery Events",
       "Art Consulting",
     ],
-    socialMedia: {
-      instagram: "@basinarts",
-      facebook: "BasinArts",
-    },
-    contact: {
-      email: "gallery@basinarts.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -454,7 +382,6 @@ export const businesses: Business[] = [
     category: "Education & Services",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://preservationpress.com",
     image: "/images/placeholder.svg",
     services: [
       "Book Publishing",
@@ -464,13 +391,6 @@ export const businesses: Business[] = [
       "Heritage Projects",
       "Archival Services",
     ],
-    socialMedia: {
-      instagram: "@preservationpress",
-      facebook: "PreservationPress",
-    },
-    contact: {
-      email: "info@preservationpress.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -497,12 +417,11 @@ export const businesses: Business[] = [
       "Design Consultation",
     ],
     socialMedia: {
-      instagram: "@krystenledetinteriors",
-      facebook: "KrystenLedetInteriors",
+      instagram: "@krysten.ledet.interiors",
+      facebook: "krysten.ledet.interiors",
     },
     contact: {
       address: "102 Camille St",
-      email: "krysten@krystenledetinteriors.com",
     },
     featured: true,
     createdAt: "2025-01-01",
@@ -516,7 +435,6 @@ export const businesses: Business[] = [
     category: "Education & Services",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://pottygirl.com",
     image: "/images/placeholder.svg",
     services: [
       "Portable Restroom Rental",
@@ -526,13 +444,6 @@ export const businesses: Business[] = [
       "Regular Maintenance",
       "Emergency Service",
     ],
-    socialMedia: {
-      instagram: "@pottygirl",
-      facebook: "PottyGirl",
-    },
-    contact: {
-      email: "info@pottygirl.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -545,7 +456,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://vacajunsewwhat.com",
     image: "/images/placeholder.svg",
     services: [
       "Custom Embroidery",
@@ -555,13 +465,6 @@ export const businesses: Business[] = [
       "Personalized Gifts",
       "Cajun-themed Items",
     ],
-    socialMedia: {
-      instagram: "@vacajunsewwhat",
-      facebook: "VaCajunSewWhat",
-    },
-    contact: {
-      email: "tina@vacajunsewwhat.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -574,7 +477,6 @@ export const businesses: Business[] = [
     category: "Education & Services",
     city: "Lafayette",
     state: "Louisiana",
-    website: "https://carolineandcompany.com",
     image: "/images/placeholder.svg",
     services: [
       "Brand Development",
@@ -584,13 +486,6 @@ export const businesses: Business[] = [
       "Content Creation",
       "Business Consulting",
     ],
-    socialMedia: {
-      instagram: "@carolineandcompany",
-      facebook: "CarolineAndCompany",
-    },
-    contact: {
-      email: "caroline@carolineandcompany.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -604,7 +499,6 @@ export const businesses: Business[] = [
     category: "Fashion & Jewelry",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://jamieboudreaux.com",
     image: "/images/placeholder.svg",
     services: [
       "Personal Styling",
@@ -614,13 +508,6 @@ export const businesses: Business[] = [
       "Image Consulting",
       "Style Workshops",
     ],
-    socialMedia: {
-      instagram: "@jamieboudreaux",
-      facebook: "JamieBoudreaux",
-    },
-    contact: {
-      email: "jamie@jamieboudreaux.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -633,7 +520,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://somefromatlanta.com",
     image: "/images/placeholder.svg",
     services: [
       "Local Products",
@@ -643,13 +529,6 @@ export const businesses: Business[] = [
       "Handmade Items",
       "Custom Orders",
     ],
-    socialMedia: {
-      instagram: "@somefromatlanta",
-      facebook: "SomeFromATL",
-    },
-    contact: {
-      email: "hello@somefromatlanta.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -662,7 +541,6 @@ export const businesses: Business[] = [
     category: "Food & Dining",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://thesluttyvegan.com",
     image: "/images/placeholder.svg",
     services: [
       "Vegan Comfort Food",
@@ -672,13 +550,6 @@ export const businesses: Business[] = [
       "Catering",
       "Food Truck Events",
     ],
-    socialMedia: {
-      instagram: "@thesluttyvegan",
-      facebook: "SluttyVeganATL",
-    },
-    contact: {
-      email: "info@thesluttyvegan.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -725,7 +596,6 @@ export const businesses: Business[] = [
     category: "Home & Lifestyle",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://livingwalls.org",
     image: "/images/placeholder.svg",
     services: [
       "Mural Creation",
@@ -735,13 +605,6 @@ export const businesses: Business[] = [
       "Artist Workshops",
       "Cultural Events",
     ],
-    socialMedia: {
-      instagram: "@livingwallsatl",
-      facebook: "LivingWallsATL",
-    },
-    contact: {
-      email: "monica@livingwalls.org",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
@@ -754,7 +617,6 @@ export const businesses: Business[] = [
     category: "Food & Dining",
     city: "Atlanta",
     state: "Georgia",
-    website: "https://starprovisionsmarket.com",
     image: "/images/placeholder.svg",
     services: [
       "Gourmet Market",
@@ -764,13 +626,6 @@ export const businesses: Business[] = [
       "Catering",
       "Cooking Classes",
     ],
-    socialMedia: {
-      instagram: "@starprovisionsmarket",
-      facebook: "StarProvisionsMarket",
-    },
-    contact: {
-      email: "info@starprovisionsmarket.com",
-    },
     featured: true,
     createdAt: "2025-01-01",
   },
